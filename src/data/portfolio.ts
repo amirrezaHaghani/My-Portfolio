@@ -71,11 +71,12 @@ export const skills: Skill[] = [
 export const experiences: Experience[] = [
   {
     company: 'Pishgamane Moje Telephone Hamrah (BadeSaba)',
-    role: 'Senior Android Developer',
+    role: 'Senior Android Developer / Team Lead',
     period: 'Jun 2021 - Present',
     summary:
-      'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, with a focus on reliability, performance, and maintainable feature delivery.',
+      'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, including team lead responsibility during the last two years with a focus on reliability, performance, and maintainable feature delivery.',
     highlights: [
+      'Led the Android team during the last two years, coordinating delivery, code quality, and technical direction.',
       'Built and maintained Habal Al-Matin, Bab Al-Naim, and Badesaba Android products at national scale.',
       'Refactored aging codebases to reduce risk, improve readability, and make feature delivery steadier.',
       'Created technical documentation for new engineers and helped standardize practical engineering habits.',
