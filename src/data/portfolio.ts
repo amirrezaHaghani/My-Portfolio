@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
     summary:
       'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, with a focus on reliability, performance, and maintainable feature delivery.',
     highlights: [
-      'Built and maintained Habal Al-Matin, Bab Al-Naim, and Bad Saba Android products at national scale.',
+      'Built and maintained Habal Al-Matin, Bab Al-Naim, and Badesaba Android products at national scale.',
       'Refactored aging codebases to reduce risk, improve readability, and make feature delivery steadier.',
       'Created technical documentation for new engineers and helped standardize practical engineering habits.',
       'Partnered with engineering teammates on architecture decisions, performance work, and release quality.',
@@ -159,14 +159,14 @@ export const projects: Project[] = [
     storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.babonnaeim',
   },
   {
-    title: 'Bad Saba Calendar',
+    title: 'Badesaba Calendar',
     category: 'Religious',
     description:
       'A high-traffic Azan and calendar app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
     technologies: ['Kotlin', 'Coroutines', 'Location', 'Notifications'],
     accent: '#f4b35e',
     imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
-    imageAlt: 'Bad Saba calendar app screenshot',
+    imageAlt: 'Badesaba calendar app screenshot',
     stats: ['39M Bazaar installs', '4.7 rating', '1300+ Iranian cities'],
     websiteUrl: 'https://badesaba.ir/',
     storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.badesaba',
