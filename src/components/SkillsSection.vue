@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import AndroidMascot from './AndroidMascot.vue';
 import { skills } from '../data/portfolio';
 
 const skillSummaries: Record<string, string> = {
@@ -28,6 +29,7 @@ const groupedSkills = computed(() => {
 
     <div class="skills-grid">
       <article v-for="(items, group) in groupedSkills" :key="group" class="skill-card reveal">
+        <AndroidMascot />
         <div class="skill-card-header">
           <h3>{{ group }}</h3>
           <p>{{ skillSummaries[group] }}</p>

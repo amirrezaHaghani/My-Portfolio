@@ -3,6 +3,7 @@ import { computed, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Store } from '@lucide/vue';
+import AndroidMascot from './AndroidMascot.vue';
 import { projects } from '../data/portfolio';
 import { useUiStore, type ProjectFilter } from '../stores/ui';
 
@@ -65,6 +66,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
 
     <TransitionGroup class="projects-grid" name="project-card" tag="div">
       <article v-for="project in filteredProjects" :key="project.title" class="project-card reveal">
+        <AndroidMascot />
         <div class="project-shot" :style="{ '--accent': project.accent }">
           <img :src="project.imageUrl" :alt="project.imageAlt" loading="lazy" />
           <div class="project-shot-overlay" aria-hidden="true"></div>
