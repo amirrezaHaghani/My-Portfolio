@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BriefcaseBusiness, Code2, Mail, Phone, Send } from '@lucide/vue';
+import { Code2, Mail, Phone, Send } from '@lucide/vue';
 import { ref } from 'vue';
 import { profile } from '../data/portfolio';
 
@@ -17,7 +17,7 @@ function handleSubmit() {
   <section id="contact" class="section-shell contact-layout">
     <div class="section-heading reveal">
       <p class="eyebrow">Contact</p>
-      <h2>Let’s talk about Android products, architecture, and ambitious teams.</h2>
+      <h2>Let's talk about Android products, architecture, and ambitious teams.</h2>
       <div class="contact-methods">
         <a :href="`mailto:${profile.email}`">
           <Mail :size="18" aria-hidden="true" />
@@ -29,11 +29,8 @@ function handleSubmit() {
         </a>
       </div>
       <div class="social-row">
-        <a href="https://github.com/" aria-label="GitHub">
+        <a href="https://github.com/amirrezaHaghani" target="_blank" rel="noreferrer" aria-label="GitHub">
           <Code2 :size="20" aria-hidden="true" />
-        </a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-          <BriefcaseBusiness :size="20" aria-hidden="true" />
         </a>
       </div>
     </div>

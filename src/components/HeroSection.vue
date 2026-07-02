@@ -6,7 +6,7 @@ import { metrics, profile } from '../data/portfolio';
 <template>
   <section id="home" class="hero-section section-shell">
     <div class="hero-copy reveal">
-      <p class="eyebrow">Native mobile engineer / Kotlin specialist</p>
+      <p class="eyebrow">Senior Android engineer / Kotlin specialist</p>
       <h1>{{ profile.name }}</h1>
       <p class="hero-role">{{ profile.role }}</p>
       <p class="hero-tagline">{{ profile.tagline }}</p>
@@ -40,7 +40,7 @@ import { metrics, profile } from '../data/portfolio';
       </div>
       <div class="signal-card">
         <span>Current focus</span>
-        <strong>Kotlin, Compose, architecture, realtime systems</strong>
+        <strong>Kotlin, Compose, scalable architecture, production reliability</strong>
       </div>
     </div>
   </section>

@@ -7,7 +7,7 @@ import { profile } from '../data/portfolio';
   <section id="about" class="section-shell two-column">
     <div class="section-heading reveal">
       <p class="eyebrow">About me</p>
-      <h2>Engineering polished mobile products with durable foundations.</h2>
+      <h2>Building Android products that stay reliable after launch.</h2>
     </div>
 
     <div class="glass-panel reveal">
@@ -17,14 +17,14 @@ import { profile } from '../data/portfolio';
       </div>
       <p>
         I am an Android software engineer with 8+ years of experience, starting as a freelancer
-        before moving into product teams and large-scale native Android systems. My work blends
-        Kotlin depth, clean architecture, production debugging, and a steady habit of documenting
-        decisions so teams can move faster.
+        before moving into startup and product-team environments. My work blends Kotlin depth,
+        clean architecture, production debugging, and the patience to leave systems easier to
+        understand than I found them.
       </p>
       <p>
-        Across large-scale Android products, I have maintained core features, refactored aging
-        codebases, supported new engineers, and helped protect release quality through architecture,
-        testing, and practical collaboration.
+        I am most useful where product expectations are high and the codebase has to keep moving:
+        maintaining core features, refactoring aging modules, supporting teammates, and protecting
+        release quality through clear architecture and practical collaboration.
       </p>
       <div class="location-pill">
         <MapPin :size="17" aria-hidden="true" />

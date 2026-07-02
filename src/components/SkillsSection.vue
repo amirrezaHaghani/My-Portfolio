@@ -4,10 +4,10 @@ import { skills } from '../data/portfolio';
 
 const skillSummaries: Record<string, string> = {
   Android: 'Native Android product development across modern Kotlin and Java stacks.',
-  Architecture: 'Maintainable app structure, separation of concerns, and scalable feature delivery.',
-  Platform: 'Asynchronous data, dependency injection, networking, and reactive mobile flows.',
-  Realtime: 'Realtime communication features built around responsive mobile experiences.',
-  Workflow: 'Release-minded engineering habits, debugging, testing, collaboration, and delivery tools.',
+  Architecture: 'Clean boundaries, readable modules, and architecture choices teams can maintain.',
+  Platform: 'Asynchronous data, dependency injection, networking, and reactive product flows.',
+  Realtime: 'Realtime communication and media features built for responsive mobile experiences.',
+  Workflow: 'Release-minded engineering habits: debugging, documentation, testing, and collaboration.',
 };
 
 const groupedSkills = computed(() => {
@@ -23,7 +23,7 @@ const groupedSkills = computed(() => {
   <section id="skills" class="section-shell">
     <div class="section-heading centered reveal">
       <p class="eyebrow">Skills</p>
-      <h2>Android depth, architecture taste, and production muscle.</h2>
+      <h2>Practical Android strengths for production teams.</h2>
     </div>
 
     <div class="skills-grid">

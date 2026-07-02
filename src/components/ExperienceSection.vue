@@ -6,7 +6,7 @@ import { experiences } from '../data/portfolio';
   <section id="experience" class="section-shell">
     <div class="section-heading reveal">
       <p class="eyebrow">Experience</p>
-      <h2>A timeline shaped by shipped products and stronger codebases.</h2>
+      <h2>From freelance delivery to senior ownership of production Android apps.</h2>
     </div>
 
     <div class="timeline">

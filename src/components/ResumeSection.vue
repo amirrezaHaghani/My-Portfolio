@@ -7,10 +7,11 @@ import { profile } from '../data/portfolio';
   <section id="resume" class="section-shell resume-layout">
     <div class="section-heading reveal">
       <p class="eyebrow">Resume</p>
-      <h2>A focused CV for Android engineering roles and client work.</h2>
+      <h2>A focused CV for senior Android roles and product teams.</h2>
       <p>
-        The PDF is available for recruiters and hiring managers. The website highlights the same
-        profile with richer context, motion, and project storytelling.
+        The PDF gives recruiters the concise version: Android specialization, 8+ years of delivery,
+        Kotlin/Java depth, clean architecture, and product work across religious, healthcare, and
+        education platforms.
       </p>
       <div class="hero-actions">
         <a class="primary-button" href="/resume.pdf" download>

@@ -46,7 +46,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
   <section id="projects" class="section-shell">
     <div class="section-heading centered reveal">
       <p class="eyebrow">Projects</p>
-      <h2>Selected product work translated into recruiter-friendly stories.</h2>
+      <h2>Shipped Android products with scale, complexity, and real users.</h2>
     </div>
 
     <div class="filter-bar reveal" role="tablist" aria-label="Project filters">
