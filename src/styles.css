@@ -622,148 +622,96 @@ h3 {
 }
 
 .android-mascot {
-  --android-green: #4dffbf;
-  --android-shadow: rgba(77, 255, 191, 0.42);
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: 8px;
+  right: 12px;
   z-index: 5;
-  width: 48px;
-  height: 58px;
-  color: var(--android-green);
-  filter: drop-shadow(0 12px 22px var(--android-shadow));
+  display: block;
+  width: 76px;
+  height: 88px;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.78);
+  transform: translate3d(22px, -20px, 0) rotate(8deg) scale(0.72);
   transform-origin: 50% 100%;
-  transition: opacity 180ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 180ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.android-avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.android-avatar-core {
+  transform-origin: 48px 92px;
+}
+
+.android-antenna,
+.android-arm,
+.android-leg {
+  fill: none;
+  stroke: #4dffbf;
+  stroke-linecap: round;
+  stroke-width: 7;
+}
+
+.android-antenna {
+  stroke-width: 4;
+  transform-origin: center bottom;
 }
 
 .android-head,
-.android-body,
-.android-arm,
-.android-leg,
-.android-antenna {
-  position: absolute;
-  display: block;
-  background: currentColor;
-}
-
-.android-head {
-  top: 10px;
-  left: 9px;
-  width: 30px;
-  height: 19px;
-  border-radius: 16px 16px 5px 5px;
-  background: linear-gradient(145deg, #8bffd8, currentColor);
+.android-body {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .android-eye {
-  position: absolute;
-  top: 8px;
-  width: 4px;
-  height: 4px;
-  border-radius: 999px;
-  background: #061018;
+  fill: #061018;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.android-eye:first-child {
-  left: 8px;
-}
-
-.android-eye:last-child {
-  right: 8px;
+.android-mouth,
+.android-panel-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .android-mouth {
-  position: absolute;
-  left: 12px;
-  bottom: 4px;
-  width: 6px;
-  height: 2px;
-  border-radius: 999px;
-  background: rgba(6, 16, 24, 0.72);
-  opacity: 0.78;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.android-body {
-  top: 32px;
-  left: 9px;
-  width: 30px;
-  height: 22px;
-  border-radius: 5px 5px 9px 9px;
-  background: linear-gradient(145deg, #72ffd0, #29dca1);
+.android-panel-line {
+  fill: none;
+  stroke: rgba(77, 255, 191, 0.78);
+  stroke-width: 2;
 }
 
-.android-antenna {
-  top: 4px;
-  width: 3px;
-  height: 11px;
-  border-radius: 999px;
-  transform-origin: bottom center;
-}
-
-.android-antenna-left {
-  left: 16px;
-  transform: rotate(-28deg);
-}
-
-.android-antenna-right {
-  right: 16px;
-  transform: rotate(28deg);
-}
-
-.android-arm {
-  top: 3px;
-  width: 6px;
-  height: 19px;
-  border-radius: 999px;
-}
-
-.android-arm-left {
-  left: -8px;
+.android-heart {
+  fill: #f4b35e;
+  opacity: 0.92;
 }
 
 .android-arm-right {
-  right: -8px;
-  transform-origin: 50% 5%;
-}
-
-.android-leg {
-  bottom: -9px;
-  width: 7px;
-  height: 12px;
-  border-radius: 0 0 999px 999px;
-}
-
-.android-leg-left {
-  left: 6px;
-}
-
-.android-leg-right {
-  right: 6px;
+  transform-box: fill-box;
+  transform-origin: 15% 15%;
 }
 
 .android-spark {
-  position: absolute;
-  display: block;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  border: 1px solid rgba(244, 179, 94, 0.9);
+  fill: none;
+  stroke: #f4b35e;
+  stroke-linecap: round;
+  stroke-width: 3;
   opacity: 0;
-  transform: rotate(45deg) scale(0.4);
-}
-
-.android-spark-one {
-  top: 4px;
-  left: -4px;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .android-spark-two {
-  right: -3px;
-  bottom: 18px;
-  border-color: rgba(73, 215, 255, 0.9);
+  stroke: #49d7ff;
 }
 
 .project-card:hover .android-mascot,
@@ -778,13 +726,13 @@ h3 {
 .project-card:focus-within .android-mascot--hello .android-arm-right,
 .skill-card:hover .android-mascot--hello .android-arm-right,
 .skill-card:focus-within .android-mascot--hello .android-arm-right {
-  animation: android-hello 740ms ease-in-out 140ms 2;
+  animation: android-hello 760ms ease-in-out 140ms 2;
 }
 
-.project-card:hover .android-mascot--wink .android-eye:last-child,
-.project-card:focus-within .android-mascot--wink .android-eye:last-child,
-.skill-card:hover .android-mascot--wink .android-eye:last-child,
-.skill-card:focus-within .android-mascot--wink .android-eye:last-child {
+.project-card:hover .android-mascot--wink .android-eye-right,
+.project-card:focus-within .android-mascot--wink .android-eye-right,
+.skill-card:hover .android-mascot--wink .android-eye-right,
+.skill-card:focus-within .android-mascot--wink .android-eye-right {
   animation: android-wink 1.05s ease-in-out 180ms 2;
 }
 
@@ -800,6 +748,13 @@ h3 {
 .skill-card:hover .android-mascot--nod .android-head,
 .skill-card:focus-within .android-mascot--nod .android-head {
   animation: android-nod 880ms ease-in-out 120ms 2;
+}
+
+.project-card:hover .android-mascot--nod .android-avatar-core,
+.project-card:focus-within .android-mascot--nod .android-avatar-core,
+.skill-card:hover .android-mascot--nod .android-avatar-core,
+.skill-card:focus-within .android-mascot--nod .android-avatar-core {
+  animation: android-small-bounce 880ms ease-in-out 120ms 2;
 }
 
 .project-card:hover .android-mascot--spark .android-spark,
@@ -1512,15 +1467,15 @@ h3 {
   }
 
   25% {
-    transform: rotate(-18deg) translateY(-1px);
+    transform: rotate(-12deg) translateY(-1px);
   }
 
   55% {
-    transform: rotate(14deg);
+    transform: rotate(9deg);
   }
 
   78% {
-    transform: rotate(-10deg);
+    transform: rotate(-6deg);
   }
 }
 
@@ -1528,27 +1483,25 @@ h3 {
   0%,
   38%,
   100% {
-    height: 4px;
     transform: translateY(0) scaleY(1);
   }
 
   52%,
   68% {
-    height: 2px;
-    transform: translateY(1px) scaleY(0.35);
+    transform: translateY(1px) scaleY(0.16);
   }
 }
 
 @keyframes android-smile {
   0%,
   100% {
-    width: 6px;
-    transform: translateX(0);
+    transform: scaleX(1);
+    stroke-width: 2.4;
   }
 
   55% {
-    width: 10px;
-    transform: translateX(-2px);
+    transform: scaleX(1.45);
+    stroke-width: 2.8;
   }
 }
 
@@ -1567,20 +1520,35 @@ h3 {
   }
 }
 
+@keyframes android-small-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  42% {
+    transform: translateY(2px);
+  }
+
+  70% {
+    transform: translateY(-1px);
+  }
+}
+
 @keyframes android-sparkle {
   0% {
     opacity: 0;
-    transform: rotate(45deg) scale(0.35);
+    transform: scale(0.35) rotate(0deg);
   }
 
   42% {
     opacity: 1;
-    transform: rotate(45deg) scale(1);
+    transform: scale(1) rotate(90deg);
   }
 
   100% {
     opacity: 0;
-    transform: rotate(45deg) scale(1.45);
+    transform: scale(1.45) rotate(160deg);
   }
 }
 
@@ -1598,19 +1566,19 @@ h3 {
 @keyframes android-antenna-wiggle {
   0%,
   100% {
-    translate: 0 0;
+    transform: translate(0, 0) rotate(0deg);
   }
 
   25% {
-    translate: 1px -1px;
+    transform: translate(1px, -1px) rotate(5deg);
   }
 
   55% {
-    translate: -1px 1px;
+    transform: translate(-1px, 1px) rotate(-6deg);
   }
 
   80% {
-    translate: 1px 0;
+    transform: translate(1px, 0) rotate(3deg);
   }
 }
 
