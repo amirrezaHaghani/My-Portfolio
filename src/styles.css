@@ -675,6 +675,17 @@ h3 {
   right: 8px;
 }
 
+.android-mouth {
+  position: absolute;
+  left: 12px;
+  bottom: 4px;
+  width: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(6, 16, 24, 0.72);
+  opacity: 0.78;
+}
+
 .android-body {
   top: 32px;
   left: 9px;
@@ -733,6 +744,28 @@ h3 {
   right: 6px;
 }
 
+.android-spark {
+  position: absolute;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  border: 1px solid rgba(244, 179, 94, 0.9);
+  opacity: 0;
+  transform: rotate(45deg) scale(0.4);
+}
+
+.android-spark-one {
+  top: 4px;
+  left: -4px;
+}
+
+.android-spark-two {
+  right: -3px;
+  bottom: 18px;
+  border-color: rgba(73, 215, 255, 0.9);
+}
+
 .project-card:hover .android-mascot,
 .project-card:focus-within .android-mascot,
 .skill-card:hover .android-mascot,
@@ -741,11 +774,53 @@ h3 {
   transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
 }
 
-.project-card:hover .android-arm-right,
-.project-card:focus-within .android-arm-right,
-.skill-card:hover .android-arm-right,
-.skill-card:focus-within .android-arm-right {
-  animation: android-wave 680ms ease-in-out 140ms 2;
+.project-card:hover .android-mascot--hello .android-arm-right,
+.project-card:focus-within .android-mascot--hello .android-arm-right,
+.skill-card:hover .android-mascot--hello .android-arm-right,
+.skill-card:focus-within .android-mascot--hello .android-arm-right {
+  animation: android-hello 740ms ease-in-out 140ms 2;
+}
+
+.project-card:hover .android-mascot--wink .android-eye:last-child,
+.project-card:focus-within .android-mascot--wink .android-eye:last-child,
+.skill-card:hover .android-mascot--wink .android-eye:last-child,
+.skill-card:focus-within .android-mascot--wink .android-eye:last-child {
+  animation: android-wink 1.05s ease-in-out 180ms 2;
+}
+
+.project-card:hover .android-mascot--wink .android-mouth,
+.project-card:focus-within .android-mascot--wink .android-mouth,
+.skill-card:hover .android-mascot--wink .android-mouth,
+.skill-card:focus-within .android-mascot--wink .android-mouth {
+  animation: android-smile 1.05s ease-in-out 180ms 2;
+}
+
+.project-card:hover .android-mascot--nod .android-head,
+.project-card:focus-within .android-mascot--nod .android-head,
+.skill-card:hover .android-mascot--nod .android-head,
+.skill-card:focus-within .android-mascot--nod .android-head {
+  animation: android-nod 880ms ease-in-out 120ms 2;
+}
+
+.project-card:hover .android-mascot--spark .android-spark,
+.project-card:focus-within .android-mascot--spark .android-spark,
+.skill-card:hover .android-mascot--spark .android-spark,
+.skill-card:focus-within .android-mascot--spark .android-spark {
+  animation: android-sparkle 900ms ease-out 130ms 2;
+}
+
+.project-card:hover .android-mascot--spark .android-eye,
+.project-card:focus-within .android-mascot--spark .android-eye,
+.skill-card:hover .android-mascot--spark .android-eye,
+.skill-card:focus-within .android-mascot--spark .android-eye {
+  animation: android-eye-glow 900ms ease-out 130ms 2;
+}
+
+.project-card:hover .android-mascot--peek .android-antenna,
+.project-card:focus-within .android-mascot--peek .android-antenna,
+.skill-card:hover .android-mascot--peek .android-antenna,
+.skill-card:focus-within .android-mascot--peek .android-antenna {
+  animation: android-antenna-wiggle 780ms ease-in-out 120ms 2;
 }
 
 .project-card:hover .android-mascot,
@@ -1430,22 +1505,112 @@ h3 {
   }
 }
 
-@keyframes android-wave {
+@keyframes android-hello {
   0%,
   100% {
     transform: rotate(0deg);
   }
 
   25% {
-    transform: rotate(-34deg) translateY(-1px);
+    transform: rotate(-18deg) translateY(-1px);
   }
 
   55% {
-    transform: rotate(26deg);
+    transform: rotate(14deg);
   }
 
   78% {
-    transform: rotate(-22deg);
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes android-wink {
+  0%,
+  38%,
+  100% {
+    height: 4px;
+    transform: translateY(0) scaleY(1);
+  }
+
+  52%,
+  68% {
+    height: 2px;
+    transform: translateY(1px) scaleY(0.35);
+  }
+}
+
+@keyframes android-smile {
+  0%,
+  100% {
+    width: 6px;
+    transform: translateX(0);
+  }
+
+  55% {
+    width: 10px;
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes android-nod {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  36% {
+    transform: translateY(3px) rotate(3deg);
+  }
+
+  68% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+}
+
+@keyframes android-sparkle {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.35);
+  }
+
+  42% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) scale(1.45);
+  }
+}
+
+@keyframes android-eye-glow {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+
+  48% {
+    box-shadow: 0 0 8px rgba(244, 179, 94, 0.9);
+  }
+}
+
+@keyframes android-antenna-wiggle {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  25% {
+    translate: 1px -1px;
+  }
+
+  55% {
+    translate: -1px 1px;
+  }
+
+  80% {
+    translate: 1px 0;
   }
 }
 
