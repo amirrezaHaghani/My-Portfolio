@@ -84,11 +84,11 @@ main {
   top: 0;
   left: 0;
   z-index: 2;
-  width: 18rem;
-  height: 18rem;
+  width: 13rem;
+  height: 13rem;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(73, 215, 255, 0.16), rgba(77, 255, 191, 0.07) 42%, transparent 70%);
-  filter: blur(18px);
+  filter: blur(10px);
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -204,32 +204,32 @@ main {
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black, transparent 72%);
+  opacity: 0.72;
 }
 
 .energy-lane {
   position: absolute;
   left: calc((var(--i) * 11%) - 8%);
   top: calc((var(--i) * 13%) - 4%);
-  width: 34rem;
+  width: 30rem;
   height: 1px;
-  background:
-    linear-gradient(90deg, transparent, rgba(73, 215, 255, 0.14), rgba(77, 255, 191, 0.46), transparent),
-    repeating-linear-gradient(90deg, transparent 0 22px, rgba(255, 255, 255, 0.2) 22px 26px);
-  background-size: 240px 1px, 56px 1px;
-  opacity: 0.46;
+  background: linear-gradient(90deg, transparent, rgba(73, 215, 255, 0.12), rgba(77, 255, 191, 0.36), transparent);
+  opacity: 0.34;
   transform: rotate(calc(-28deg + var(--i) * 7deg));
   transform-origin: left center;
-  filter: drop-shadow(0 0 12px rgba(73, 215, 255, 0.32));
+  animation: lane-drift calc(14s + var(--i) * 1.4s) linear infinite;
+  will-change: transform, opacity;
 }
 
 .mesh {
   position: absolute;
-  width: 38rem;
+  width: 34rem;
   aspect-ratio: 1;
   border-radius: 999px;
-  filter: blur(80px);
-  opacity: 0.42;
-  animation: drift 16s ease-in-out infinite alternate;
+  filter: blur(56px);
+  opacity: 0.28;
+  animation: drift 24s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .mesh-a {
@@ -256,12 +256,13 @@ main {
   position: absolute;
   left: calc((var(--i) * 37px) % 100vw);
   top: calc((var(--i) * 83px) % 100vh);
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 0 18px rgba(73, 215, 255, 0.7);
-  animation: float-particle calc(7s + var(--i) * 0.22s) ease-in-out infinite alternate;
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: 0 0 8px rgba(73, 215, 255, 0.45);
+  animation: float-particle calc(12s + var(--i) * 0.38s) ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 .site-nav {
@@ -1228,6 +1229,22 @@ h3 {
   }
 }
 
+@keyframes lane-drift {
+  0% {
+    opacity: 0.18;
+    transform: translate3d(-8vw, 0, 0) rotate(calc(-28deg + var(--i) * 7deg));
+  }
+
+  50% {
+    opacity: 0.36;
+  }
+
+  100% {
+    opacity: 0.18;
+    transform: translate3d(108vw, -8vh, 0) rotate(calc(-28deg + var(--i) * 7deg));
+  }
+}
+
 @keyframes float-particle {
   to {
     transform: translate3d(22px, -36px, 0);
@@ -1287,6 +1304,21 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  .mesh {
+    width: 28rem;
+    filter: blur(44px);
+    opacity: 0.22;
+  }
+
+  .energy-lane:nth-of-type(n + 6),
+  .particle:nth-of-type(n + 18) {
+    display: none;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
   .desktop-links,
   .nav-cta {
     display: none;
@@ -1333,6 +1365,16 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .animated-bg::before {
+    opacity: 0.42;
+  }
+
+  .mesh-c,
+  .energy-lane:nth-of-type(n + 5),
+  .particle:nth-of-type(n + 14) {
+    display: none;
+  }
+
   .section-shell {
     width: min(100% - 24px, 1120px);
     padding: 78px 0;

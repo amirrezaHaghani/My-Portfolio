@@ -133,22 +133,30 @@ onMounted(() => {
   });
 
   const cursorGlow = document.querySelector<HTMLElement>('.cursor-glow');
+  let cursorFrame = 0;
   const moveCursorGlow = (event: PointerEvent) => {
     if (!cursorGlow || event.pointerType === 'touch') {
       return;
     }
 
-    gsap.to(cursorGlow, {
-      x: event.clientX,
-      y: event.clientY,
-      opacity: 1,
-      duration: 0.35,
-      ease: 'power3.out',
+    window.cancelAnimationFrame(cursorFrame);
+    cursorFrame = window.requestAnimationFrame(() => {
+      gsap.to(cursorGlow, {
+        x: event.clientX,
+        y: event.clientY,
+        opacity: 1,
+        duration: 0.24,
+        overwrite: 'auto',
+        ease: 'power2.out',
+      });
     });
   };
 
   window.addEventListener('pointermove', moveCursorGlow);
-  cleanupCallbacks.push(() => window.removeEventListener('pointermove', moveCursorGlow));
+  cleanupCallbacks.push(() => {
+    window.cancelAnimationFrame(cursorFrame);
+    window.removeEventListener('pointermove', moveCursorGlow);
+  });
 
   gsap.utils.toArray<HTMLElement>('.primary-button, .secondary-button, .ghost-button, .nav-cta').forEach((button) => {
     const moveButton = (event: PointerEvent) => {
@@ -299,13 +307,6 @@ onMounted(() => {
     ease: 'sine.inOut',
   });
 
-  gsap.to('.energy-lane', {
-    backgroundPositionX: '240px',
-    duration: 2.8,
-    repeat: -1,
-    ease: 'none',
-    stagger: 0.16,
-  });
 });
 
 onUnmounted(() => {
