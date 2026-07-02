@@ -27,15 +27,14 @@ const setProjectFilter = (filter: ProjectFilter) => {
 
     gsap.fromTo(
       '.project-card',
-      { y: 28, opacity: 0, filter: 'blur(12px)' },
+      { y: 14, scale: 0.98 },
       {
         y: 0,
-        opacity: 1,
-        filter: 'blur(0px)',
-        duration: 0.62,
-        ease: 'power3.out',
-        stagger: 0.07,
-        clearProps: 'filter,opacity,translate,transform',
+        scale: 1,
+        duration: 0.42,
+        ease: 'power2.out',
+        stagger: 0.04,
+        clearProps: 'transform',
         onComplete: () => ScrollTrigger.refresh(),
       },
     );

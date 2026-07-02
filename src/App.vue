@@ -33,18 +33,15 @@ onMounted(() => {
   gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
     gsap.fromTo(
       element,
-      { y: 42, opacity: 0, filter: 'blur(12px)' },
+      { y: 18 },
       {
         y: 0,
-        opacity: 1,
-        filter: 'blur(0px)',
-        duration: 0.9,
-        ease: 'power3.out',
+        duration: 0.55,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: element,
-          start: 'top 86%',
-          toggleActions: 'restart none restart none',
-          invalidateOnRefresh: true,
+          start: 'top 88%',
+          once: true,
         },
       },
     );
@@ -115,22 +112,6 @@ onMounted(() => {
       },
     );
   };
-
-  gsap.utils.toArray<HTMLElement>('.section-shell').forEach((section) => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 58%',
-      once: false,
-      onEnter: () => {
-        const label = section.id ? `${section.id.toUpperCase()} XP` : 'XP';
-        showAchievement(label);
-      },
-      onEnterBack: () => {
-        const label = section.id ? `${section.id.toUpperCase()} XP` : 'XP';
-        showAchievement(label);
-      },
-    });
-  });
 
   const cursorGlow = document.querySelector<HTMLElement>('.cursor-glow');
   let cursorFrame = 0;
