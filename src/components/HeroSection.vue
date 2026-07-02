@@ -36,7 +36,14 @@ import { metrics, profile } from '../data/portfolio';
 
     <div class="hero-visual reveal">
       <div class="portrait-ring">
-        <img :src="profile.portraitUrl" alt="Portrait of Amirreza Haghani" />
+        <img
+          :src="profile.portraitUrl"
+          alt="Portrait of Amirreza Haghani"
+          width="960"
+          height="960"
+          decoding="async"
+          fetchpriority="high"
+        />
       </div>
       <div class="signal-card">
         <span>Current focus</span>

@@ -68,6 +68,7 @@ onMounted(() => {
 
   const hudProgress = document.querySelector<HTMLElement>('.hud-track i');
   const hudXp = document.querySelector<HTMLElement>('.hud-xp');
+  let lastHudPercent = -1;
 
   ScrollTrigger.create({
     trigger: document.documentElement,
@@ -77,15 +78,14 @@ onMounted(() => {
       const percent = Math.round(self.progress * 100);
 
       if (hudXp) {
-        hudXp.textContent = `${percent}%`;
+        if (percent !== lastHudPercent) {
+          hudXp.textContent = `${percent}%`;
+          lastHudPercent = percent;
+        }
       }
 
       if (hudProgress) {
-        gsap.to(hudProgress, {
-          scaleX: Math.max(self.progress, 0.04),
-          duration: 0.28,
-          ease: 'power2.out',
-        });
+        hudProgress.style.transform = `scaleX(${Math.max(self.progress, 0.04)})`;
       }
     },
   });
@@ -114,6 +114,9 @@ onMounted(() => {
   };
 
   const cursorGlow = document.querySelector<HTMLElement>('.cursor-glow');
+  const moveCursorX = cursorGlow ? gsap.quickTo(cursorGlow, 'x', { duration: 0.18, ease: 'power2.out' }) : null;
+  const moveCursorY = cursorGlow ? gsap.quickTo(cursorGlow, 'y', { duration: 0.18, ease: 'power2.out' }) : null;
+  const fadeCursor = cursorGlow ? gsap.quickTo(cursorGlow, 'opacity', { duration: 0.18, ease: 'power2.out' }) : null;
   let cursorFrame = 0;
   const moveCursorGlow = (event: PointerEvent) => {
     if (!cursorGlow || event.pointerType === 'touch') {
@@ -122,18 +125,13 @@ onMounted(() => {
 
     window.cancelAnimationFrame(cursorFrame);
     cursorFrame = window.requestAnimationFrame(() => {
-      gsap.to(cursorGlow, {
-        x: event.clientX,
-        y: event.clientY,
-        opacity: 1,
-        duration: 0.24,
-        overwrite: 'auto',
-        ease: 'power2.out',
-      });
+      moveCursorX?.(event.clientX);
+      moveCursorY?.(event.clientY);
+      fadeCursor?.(1);
     });
   };
 
-  window.addEventListener('pointermove', moveCursorGlow);
+  window.addEventListener('pointermove', moveCursorGlow, { passive: true });
   cleanupCallbacks.push(() => {
     window.cancelAnimationFrame(cursorFrame);
     window.removeEventListener('pointermove', moveCursorGlow);
@@ -170,8 +168,17 @@ onMounted(() => {
 
   const interactiveCardSelector =
     '.project-card, .skill-card, .timeline-card, .resume-preview, .testimonial-card, .metric-strip div';
+  let tiltFrame = 0;
+  let latestTiltEvent: PointerEvent | null = null;
 
-  const tiltInteractiveCard = (event: PointerEvent) => {
+  const applyInteractiveCardTilt = () => {
+    const event = latestTiltEvent;
+    tiltFrame = 0;
+
+    if (!event) {
+      return;
+    }
+
     if (event.pointerType === 'touch') {
       return;
     }
@@ -201,6 +208,18 @@ onMounted(() => {
     });
   };
 
+  const tiltInteractiveCard = (event: PointerEvent) => {
+    if (window.innerWidth < 900) {
+      return;
+    }
+
+    latestTiltEvent = event;
+
+    if (!tiltFrame) {
+      tiltFrame = window.requestAnimationFrame(applyInteractiveCardTilt);
+    }
+  };
+
   const resetInteractiveCard = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
     const card = target?.closest<HTMLElement>(interactiveCardSelector);
@@ -213,9 +232,10 @@ onMounted(() => {
     gsap.to(card, { rotateX: 0, rotateY: 0, y: 0, duration: 0.55, ease: 'power3.out' });
   };
 
-  document.addEventListener('pointermove', tiltInteractiveCard);
-  document.addEventListener('pointerout', resetInteractiveCard);
+  document.addEventListener('pointermove', tiltInteractiveCard, { passive: true });
+  document.addEventListener('pointerout', resetInteractiveCard, { passive: true });
   cleanupCallbacks.push(() => {
+    window.cancelAnimationFrame(tiltFrame);
     document.removeEventListener('pointermove', tiltInteractiveCard);
     document.removeEventListener('pointerout', resetInteractiveCard);
   });
@@ -255,14 +275,14 @@ onMounted(() => {
       return;
     }
 
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 6; i += 1) {
       const particle = document.createElement('span');
       particle.className = 'click-burst';
       particle.style.left = `${event.clientX}px`;
       particle.style.top = `${event.clientY}px`;
       document.body.appendChild(particle);
 
-      const angle = (Math.PI * 2 * i) / 10;
+      const angle = (Math.PI * 2 * i) / 6;
       const distance = 34 + Math.random() * 42;
 
       gsap.to(particle, {
@@ -279,15 +299,6 @@ onMounted(() => {
 
   document.addEventListener('pointerdown', createBurst);
   cleanupCallbacks.push(() => document.removeEventListener('pointerdown', createBurst));
-
-  gsap.to('.hud-rank', {
-    textShadow: '0 0 22px rgba(77, 255, 191, 0.9)',
-    duration: 1.2,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut',
-  });
-
 });
 
 onUnmounted(() => {

@@ -1,4 +1,4 @@
-import portraitUrl from '../assets/amirreza-portrait.png';
+import portraitUrl from '../assets/amirreza-portrait-optimized.jpg';
 
 export type Skill = {
   name: string;
