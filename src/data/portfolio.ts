@@ -152,7 +152,7 @@ export const projects: Project[] = [
     description:
       'A high-scale Quran audio product with recitations from dozens of Qaris, spoken tafsir, translations, Quran search, bookmarks, Tajweed training, and personal or group Khatm planning.',
     technologies: ['Kotlin', 'Android SDK', 'Audio Playback', 'Offline Content'],
-    accent: '#49d7ff',
+    accent: '#8fb9c9',
     imageUrl: 'https://statics.myghoran.com/assets/images/intro/habl-600px.webp',
     imageAlt: 'Habal Al-Matin Quran app preview',
     stats: ['6.8M Bazaar installs', '4.7 rating', 'Audio Quran platform'],
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     description:
       'A polished audio Mafatih al-Jinan experience for prayers and Ziarat, with synchronized text, translation, 50 reciters, advanced search, daily/monthly acts, favorites, and group Khatm flows.',
     technologies: ['Kotlin', 'MVVM', 'Search', 'Media Content'],
-    accent: '#4dffbf',
+    accent: '#8bd2bd',
     imageUrl: 'https://mymafatih.com/assets/images/png/header.png',
     imageAlt: 'Bab Al-Naim Mafatih app preview',
     stats: ['4.6M Bazaar installs', '4.7 rating', '50 reciters'],
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     description:
       'A high-traffic Azan and calendar app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
     technologies: ['Kotlin', 'Coroutines', 'Location', 'Notifications'],
-    accent: '#f4b35e',
+    accent: '#c9a66b',
     imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
     imageAlt: 'Badesaba calendar app screenshot',
     stats: ['39M Bazaar installs', '4.7 rating', '1300+ Iranian cities'],
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     description:
       'A patient-facing telemedicine app for online doctor visits, immediate consultation, secure audio/video calls, electronic prescriptions, patient profiles, and sharing ECG samples or medical files.',
     technologies: ['Kotlin', 'WebRTC', 'Healthcare UX', 'Analytics'],
-    accent: '#8f7bff',
+    accent: '#a7a0c8',
     imageUrl: 'https://hamrahdoctor.com/_next/static/media/banner-app.fd4a8651.webp',
     imageAlt: 'Hamrah Doctor telemedicine product preview',
     stats: ['Telemedicine platform', '4.0 Bazaar rating', 'ECG sharing'],
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     category: 'Education',
     description:
       'An education app platform for course businesses, supporting live and offline learning, media protection, subscriptions, online exams, CRM, payments, analytics, and custom branding.',
-    accent: '#ff7a59',
+    accent: '#c18d7d',
     technologies: ['Java', 'Kotlin', 'MVVM', 'API Integration'],
     imageUrl: 'https://vesam24.co/wp-content/uploads/2025/11/bgipad.png',
     imageAlt: 'Vesam educational app platform preview',
