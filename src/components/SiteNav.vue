@@ -3,7 +3,7 @@ import { Download, Menu, X } from '@lucide/vue';
 import { storeToRefs } from 'pinia';
 import { useUiStore } from '../stores/ui';
 
-const links = ['about', 'skills', 'experience', 'projects', 'resume', 'contact'];
+const links = ['about', 'skills', 'experience', 'projects', 'contact'];
 const ui = useUiStore();
 const { isMenuOpen } = storeToRefs(ui);
 </script>

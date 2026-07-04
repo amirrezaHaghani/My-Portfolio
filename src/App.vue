@@ -8,7 +8,6 @@ import ContactSection from './components/ContactSection.vue';
 import ExperienceSection from './components/ExperienceSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import ProjectsSection from './components/ProjectsSection.vue';
-import ResumeSection from './components/ResumeSection.vue';
 import SiteNav from './components/SiteNav.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
@@ -167,7 +166,7 @@ onMounted(() => {
   });
 
   const interactiveCardSelector =
-    '.project-card, .skill-card, .timeline-card, .resume-preview, .testimonial-card, .metric-strip div';
+    '.project-card, .skill-card, .timeline-card, .testimonial-card, .metric-strip div';
   let tiltFrame = 0;
   let latestTiltEvent: PointerEvent | null = null;
 
@@ -267,7 +266,7 @@ onMounted(() => {
   cleanupCallbacks.push(() => document.removeEventListener('click', runSectionTransition));
 
   const burstTargets =
-    'a, button, .project-card, .skill-chip, .timeline-card, .resume-preview, .testimonial-card, .metric-strip div';
+    'a, button, .project-card, .skill-chip, .timeline-card, .testimonial-card, .metric-strip div';
   const createBurst = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
 
@@ -325,7 +324,6 @@ onUnmounted(() => {
     <SkillsSection />
     <ExperienceSection />
     <ProjectsSection />
-    <ResumeSection />
     <TestimonialsSection />
     <ContactSection />
   </main>

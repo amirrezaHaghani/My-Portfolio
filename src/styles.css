@@ -526,7 +526,6 @@ h3 {
 .glass-panel p,
 .timeline-card p,
 .project-body span,
-.resume-paper p,
 .testimonial-card p {
   color: rgba(246, 251, 255, 0.72);
   line-height: 1.75;
@@ -557,7 +556,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.resume-preview,
 .testimonial-card,
 .contact-form {
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -573,7 +571,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.resume-preview,
 .testimonial-card,
 .contact-form {
   position: relative;
@@ -584,7 +581,6 @@ h3 {
 .skill-card::before,
 .timeline-card::before,
 .project-card::before,
-.resume-preview::before,
 .testimonial-card::before,
 .contact-form::before {
   position: absolute;
@@ -603,7 +599,6 @@ h3 {
 .skill-card:hover::before,
 .timeline-card:hover::before,
 .project-card:hover::before,
-.resume-preview:hover::before,
 .testimonial-card:hover::before,
 .contact-form:hover::before {
   opacity: 1;
@@ -614,7 +609,6 @@ h3 {
 .skill-card > *,
 .timeline-card > *,
 .project-card > *,
-.resume-preview > *,
 .testimonial-card > *,
 .contact-form > * {
   position: relative;
@@ -827,7 +821,6 @@ h3 {
 .signal-card span,
 .timeline-card span,
 .project-body p,
-.resume-paper span,
 .testimonial-card span {
   color: #4dffbf;
   font-size: 0.78rem;
@@ -843,7 +836,6 @@ h3 {
 }
 
 .two-column,
-.resume-layout,
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
@@ -1208,45 +1200,6 @@ h3 {
   transform: scale(0.985) translateY(12px);
 }
 
-.resume-preview {
-  padding: 22px;
-}
-
-.resume-paper {
-  min-height: 430px;
-  padding: 28px;
-  border-radius: 8px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.93), rgba(210, 235, 242, 0.82));
-  color: #071016;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-}
-
-.resume-paper strong {
-  display: block;
-  margin-top: 8px;
-  font-family: Sora, sans-serif;
-  font-size: 1.7rem;
-}
-
-.resume-paper p {
-  color: rgba(7, 16, 22, 0.66);
-}
-
-.resume-paper div {
-  height: 11px;
-  margin-top: 24px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(7, 16, 22, 0.28), rgba(7, 16, 22, 0.06));
-}
-
-.resume-paper div:nth-of-type(2) {
-  width: 82%;
-}
-
-.resume-paper div:nth-of-type(3) {
-  width: 64%;
-}
-
 .testimonial-card {
   padding: 28px;
 }
@@ -1544,7 +1497,6 @@ h3 {
 
   .hero-section,
   .two-column,
-  .resume-layout,
   .contact-layout {
     grid-template-columns: 1fr;
   }
