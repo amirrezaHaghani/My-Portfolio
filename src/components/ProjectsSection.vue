@@ -93,6 +93,17 @@ const setProjectFilter = (filter: ProjectFilter) => {
               <i aria-hidden="true"></i>
             </figure>
           </div>
+          <div v-else-if="project.preview === 'phone-stack' && project.phoneImages" class="phone-stack-preview">
+            <figure
+              v-for="(screen, index) in project.phoneImages"
+              :key="screen"
+              class="phone-device"
+              :class="`phone-device-${index + 1}`"
+            >
+              <span aria-hidden="true"></span>
+              <img :src="screen" :alt="`${project.title} store screenshot ${index + 1}`" loading="lazy" />
+            </figure>
+          </div>
           <img v-else :src="project.imageUrl" :alt="project.imageAlt" loading="lazy" />
           <div class="project-shot-overlay" aria-hidden="true"></div>
         </div>

@@ -23,11 +23,12 @@ export type Project = {
   accent: string;
   imageUrl: string;
   imageAlt: string;
-  preview?: 'pardeabi-tv';
+  preview?: 'pardeabi-tv' | 'phone-stack';
   previewImages?: {
     home: string;
     movies: string[];
   };
+  phoneImages?: string[];
   stats: string[];
   websiteUrl: string;
   storeUrl?: string;
@@ -232,8 +233,14 @@ export const projects: Project[] = [
       'A patient-facing telemedicine app for online doctor visits, immediate consultation, secure audio/video calls, electronic prescriptions, patient profiles, and sharing ECG samples or medical files.',
     technologies: ['Kotlin', 'WebRTC', 'Healthcare UX', 'Analytics'],
     accent: '#a7a0c8',
-    imageUrl: 'https://hamrahdoctor.com/_next/static/media/banner-app.fd4a8651.webp',
-    imageAlt: 'Hamrah Doctor telemedicine product preview',
+    imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.hamrahdoctor.patient-720714151457.jpg',
+    imageAlt: 'Hamrah Doctor app screenshots from Cafe Bazaar',
+    preview: 'phone-stack',
+    phoneImages: [
+      'https://s.cafebazaar.ir/images/upload/screenshot/com.hamrahdoctor.patient-720714151457.jpg',
+      'https://s.cafebazaar.ir/images/upload/screenshot/com.hamrahdoctor.patient-674783898157.jpg',
+      'https://s.cafebazaar.ir/images/upload/screenshot/com.hamrahdoctor.patient-706814767796.jpg',
+    ],
     stats: ['Telemedicine platform', '4.0 Bazaar rating', 'ECG sharing'],
     websiteUrl: 'https://hamrahdoctor.com/',
     storeUrl: 'https://cafebazaar.ir/app/com.hamrahdoctor.patient',
