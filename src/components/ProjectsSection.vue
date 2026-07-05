@@ -98,6 +98,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
         </div>
         <div class="project-body">
           <p>{{ project.category }}</p>
+          <small v-if="project.company" class="project-company">{{ project.company }}</small>
           <h3>{{ project.title }}</h3>
           <span>{{ project.description }}</span>
           <div class="project-stats" :aria-label="`${project.title} product stats`">

@@ -17,6 +17,7 @@ export type Experience = {
 export type Project = {
   title: string;
   category: 'Religious' | 'Healthcare' | 'Education' | 'Entertainment';
+  company?: string;
   description: string;
   technologies: string[];
   accent: string;
@@ -97,10 +98,10 @@ export const experiences: Experience[] = [
     role: 'Senior Android Developer / Team Lead',
     period: 'Jun 2021 - Present',
     summary:
-      'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, including team lead responsibility since 2024 with a focus on reliability, performance, and maintainable feature delivery.',
+      'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, including Parde Abi VOD, with team lead responsibility since 2024 and a focus on reliability, performance, and maintainable feature delivery.',
     highlights: [
       'Leading the Android team since 2024, coordinating delivery, code quality, and technical direction.',
-      'Built and maintained Habal Al-Matin, Bab Al-Naim, and Badesaba Android products at national scale.',
+      'Built and maintained Habal Al-Matin, Bab Al-Naim, Badesaba, and Parde Abi Android products at national scale.',
       'Refactored aging codebases to reduce risk, improve readability, and make feature delivery steadier.',
       'Created technical documentation for new engineers and helped standardize practical engineering habits.',
       'Partnered with engineering teammates on architecture decisions, performance work, and release quality.',
@@ -159,6 +160,7 @@ export const projects: Project[] = [
   {
     title: 'Parde Abi VOD',
     category: 'Entertainment',
+    company: 'Pishgamane Moje Telephone Hamrah (BadeSaba)',
     description:
       'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
     accent: '#8fb9c9',
