@@ -63,6 +63,7 @@ export const skills: Skill[] = [
   { name: 'Java', level: 88, group: 'Android' },
   { name: 'Jetpack Compose', level: 90, group: 'Android' },
   { name: 'Android SDK', level: 94, group: 'Android' },
+  { name: 'Leanback', level: 86, group: 'Android' },
   { name: 'Material Design', level: 88, group: 'Android' },
   { name: 'XML Views', level: 86, group: 'Android' },
   { name: 'MVVM / MVI', level: 92, group: 'Architecture' },
