@@ -44,6 +44,7 @@ import { metrics, profile } from '../data/portfolio';
           decoding="async"
           fetchpriority="high"
         />
+        <span class="portrait-wink" aria-hidden="true"></span>
       </div>
       <div class="signal-card">
         <span>Current focus</span>

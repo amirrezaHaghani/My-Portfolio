@@ -892,6 +892,33 @@ h3 {
   object-fit: cover;
 }
 
+.portrait-wink {
+  position: absolute;
+  top: 40.5%;
+  left: 54.8%;
+  z-index: 3;
+  width: 34px;
+  height: 12px;
+  border-radius: 999px;
+  border-top: 3px solid rgba(246, 251, 255, 0.92);
+  box-shadow: 0 -1px 10px rgba(143, 185, 201, 0.36);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-4deg) scaleX(0.22);
+  transform-origin: center;
+}
+
+.portrait-ring:hover .portrait-wink,
+.portrait-ring:focus-within .portrait-wink {
+  animation: portrait-wink 940ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portrait-ring:hover img,
+.portrait-ring:focus-within img {
+  transform: scale(1.018);
+  transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .signal-card {
   position: relative;
   width: min(310px, 80%);
@@ -1744,6 +1771,26 @@ h3 {
 @keyframes spin-ring {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes portrait-wink {
+  0%,
+  22%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-4deg) scaleX(0.22);
+  }
+
+  36%,
+  58% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-4deg) scaleX(1);
+  }
+
+  70% {
+    opacity: 0.38;
+    transform: translate(-50%, -50%) rotate(-4deg) scaleX(0.46);
   }
 }
 
