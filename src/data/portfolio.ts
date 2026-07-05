@@ -25,6 +25,10 @@ export type Project = {
   stats: string[];
   websiteUrl: string;
   storeUrl?: string;
+  storeLinks?: Array<{
+    label: string;
+    url: string;
+  }>;
 };
 
 export const profile = {
@@ -221,6 +225,9 @@ export const projects: Project[] = [
     imageAlt: 'Parde Abi VOD Android app screenshot',
     stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
     websiteUrl: 'https://pardeabi.ir/',
-    storeUrl: 'https://myket.ir/app/com.pardeabi.vod',
+    storeLinks: [
+      { label: 'Myket', url: 'https://myket.ir/app/com.pardeabi.vod' },
+      { label: 'Bazaar', url: 'https://cafebazaar.ir/app/com.pardeabi.vod' },
+    ],
   },
 ];

@@ -90,6 +90,16 @@ const setProjectFilter = (filter: ProjectFilter) => {
               Store
               <Store :size="16" aria-hidden="true" />
             </a>
+            <a
+              v-for="store in project.storeLinks"
+              :key="store.url"
+              :href="store.url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {{ store.label }}
+              <Store :size="16" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </article>
