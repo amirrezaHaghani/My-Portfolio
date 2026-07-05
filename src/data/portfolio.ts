@@ -16,7 +16,7 @@ export type Experience = {
 
 export type Project = {
   title: string;
-  category: 'Religious' | 'Healthcare' | 'Education';
+  category: 'Religious' | 'Healthcare' | 'Education' | 'Entertainment';
   description: string;
   technologies: string[];
   accent: string;
@@ -209,5 +209,18 @@ export const projects: Project[] = [
     imageAlt: 'Vesam educational app platform preview',
     stats: ['60+ platform features', '160+ education brands', 'Live/offline learning'],
     websiteUrl: 'https://vesam24.co/',
+  },
+  {
+    title: 'Parde Abi VOD',
+    category: 'Entertainment',
+    description:
+      'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
+    accent: '#8fb9c9',
+    technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
+    imageUrl: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
+    imageAlt: 'Parde Abi VOD Android app screenshot',
+    stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
+    websiteUrl: 'https://pardeabi.ir/',
+    storeUrl: 'https://myket.ir/app/com.pardeabi.vod',
   },
 ];

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export type ProjectFilter = 'All' | 'Religious' | 'Healthcare' | 'Education';
+export type ProjectFilter = 'All' | 'Religious' | 'Healthcare' | 'Education' | 'Entertainment';
 
 export const useUiStore = defineStore('ui', {
   state: () => ({

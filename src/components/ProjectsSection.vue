@@ -7,7 +7,7 @@ import AndroidMascot from './AndroidMascot.vue';
 import { projects } from '../data/portfolio';
 import { useUiStore, type ProjectFilter } from '../stores/ui';
 
-const filters: ProjectFilter[] = ['All', 'Religious', 'Healthcare', 'Education'];
+const filters: ProjectFilter[] = ['All', 'Religious', 'Healthcare', 'Education', 'Entertainment'];
 const ui = useUiStore();
 
 const filteredProjects = computed(() => {
