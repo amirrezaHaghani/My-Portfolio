@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { computed, onMounted, onUnmounted, watchEffect } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutSection from './components/AboutSection.vue';
@@ -10,10 +10,19 @@ import HeroSection from './components/HeroSection.vue';
 import ProjectsSection from './components/ProjectsSection.vue';
 import SiteNav from './components/SiteNav.vue';
 import SkillsSection from './components/SkillsSection.vue';
+import { useUiStore } from './stores/ui';
+import { fa } from './data/i18n';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const cleanupCallbacks: Array<() => void> = [];
+const ui = useUiStore();
+const isFa = computed(() => ui.locale === 'fa');
+
+watchEffect(() => {
+  document.documentElement.lang = isFa.value ? 'fa' : 'en';
+  document.documentElement.dir = isFa.value ? 'rtl' : 'ltr';
+});
 
 onMounted(() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -325,6 +334,6 @@ onUnmounted(() => {
   </main>
   <footer class="site-footer">
     <span>Amirreza Haghani</span>
-    <a href="#home">Back to top</a>
+    <a href="#home">{{ isFa ? fa.footer.top : 'Back to top' }}</a>
   </footer>
 </template>

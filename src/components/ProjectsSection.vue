@@ -3,12 +3,16 @@ import { computed, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Store } from '@lucide/vue';
+import { storeToRefs } from 'pinia';
 import AndroidMascot from './AndroidMascot.vue';
 import { projects } from '../data/portfolio';
+import { fa } from '../data/i18n';
 import { useUiStore, type ProjectFilter } from '../stores/ui';
 
 const filters: ProjectFilter[] = ['All', 'Religious', 'Healthcare', 'Education', 'Entertainment'];
 const ui = useUiStore();
+const { locale } = storeToRefs(ui);
+const isFa = computed(() => locale.value === 'fa');
 
 const filteredProjects = computed(() => {
   if (ui.activeFilter === 'All') {
@@ -17,6 +21,23 @@ const filteredProjects = computed(() => {
 
   return projects.filter((project) => project.category === ui.activeFilter);
 });
+
+const localizedProjects = computed(() =>
+  filteredProjects.value.map((project) => {
+    const translation = fa.projects.items[project.title as keyof typeof fa.projects.items];
+
+    if (!isFa.value || !translation) {
+      return project;
+    }
+
+    return {
+      ...project,
+      ...translation,
+    };
+  }),
+);
+
+const filterLabel = (filter: ProjectFilter) => (isFa.value ? fa.projects.filters[filter] : filter);
 
 const setProjectFilter = (filter: ProjectFilter) => {
   ui.setFilter(filter);
@@ -46,8 +67,8 @@ const setProjectFilter = (filter: ProjectFilter) => {
 <template>
   <section id="projects" class="section-shell">
     <div class="section-heading centered reveal">
-      <p class="eyebrow">Projects</p>
-      <h2>Shipped Android products with scale, complexity, and real users.</h2>
+      <p class="eyebrow">{{ isFa ? fa.projects.eyebrow : 'Projects' }}</p>
+      <h2>{{ isFa ? fa.projects.title : 'Shipped Android products with scale, complexity, and real users.' }}</h2>
     </div>
 
     <div class="filter-bar reveal" role="tablist" aria-label="Project filters">
@@ -60,19 +81,19 @@ const setProjectFilter = (filter: ProjectFilter) => {
         :aria-selected="ui.activeFilter === filter"
         @click="setProjectFilter(filter)"
       >
-        {{ filter }}
+        {{ filterLabel(filter) }}
       </button>
     </div>
 
     <TransitionGroup class="projects-grid" name="project-card" tag="div">
-      <article v-for="project in filteredProjects" :key="project.title" class="project-card reveal">
+      <article v-for="project in localizedProjects" :key="project.title" class="project-card reveal">
         <AndroidMascot />
         <div class="project-shot" :style="{ '--accent': project.accent }">
           <div v-if="project.preview === 'pardeabi-tv' && project.previewImages" class="pardeabi-tv-preview">
             <figure class="tv-device tv-device-primary">
               <div class="tv-screen">
                 <img :src="project.previewImages.home" alt="Parde Abi home screen preview" loading="lazy" />
-                <span>Home</span>
+                <span>{{ isFa ? fa.projects.links.home : 'Home' }}</span>
               </div>
               <i aria-hidden="true"></i>
             </figure>
@@ -88,7 +109,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
                     loading="lazy"
                   />
                 </div>
-                <span>Movies</span>
+                <span>{{ isFa ? fa.projects.links.movies : 'Movies' }}</span>
               </div>
               <i aria-hidden="true"></i>
             </figure>
@@ -120,11 +141,11 @@ const setProjectFilter = (filter: ProjectFilter) => {
           </div>
           <div class="project-links">
             <a :href="project.websiteUrl" target="_blank" rel="noreferrer">
-              Website
+              {{ isFa ? fa.projects.links.website : 'Website' }}
               <ExternalLink :size="16" aria-hidden="true" />
             </a>
             <a v-if="project.storeUrl" :href="project.storeUrl" target="_blank" rel="noreferrer">
-              Store
+              {{ isFa ? fa.projects.links.store : 'Store' }}
               <Store :size="16" aria-hidden="true" />
             </a>
             <a

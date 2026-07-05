@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { storeToRefs } from 'pinia';
 import AndroidMascot from './AndroidMascot.vue';
 import { skills, type Skill } from '../data/portfolio';
+import { fa } from '../data/i18n';
+import { useUiStore } from '../stores/ui';
 
 type SkillGroup = Skill['group'];
 
@@ -65,6 +68,10 @@ const skillDetails: Record<
   },
 };
 
+const ui = useUiStore();
+const { locale } = storeToRefs(ui);
+const isFa = computed(() => locale.value === 'fa');
+
 const skillGroups = computed(() => {
   const groups = skills.reduce<Record<SkillGroup, Skill[]>>((groups, skill) => {
     groups[skill.group] = groups[skill.group] ?? [];
@@ -75,7 +82,7 @@ const skillGroups = computed(() => {
   return (Object.keys(groups) as SkillGroup[]).map((name) => ({
     name,
     items: groups[name],
-    ...skillDetails[name],
+    ...(isFa.value ? fa.skills.groups[name] : skillDetails[name]),
   }));
 });
 </script>
@@ -83,11 +90,14 @@ const skillGroups = computed(() => {
 <template>
   <section id="skills" class="section-shell">
     <div class="section-heading centered reveal">
-      <p class="eyebrow">Skills</p>
-      <h2>Practical Android strengths for production teams.</h2>
+      <p class="eyebrow">{{ isFa ? fa.skills.eyebrow : 'Skills' }}</p>
+      <h2>{{ isFa ? fa.skills.title : 'Practical Android strengths for production teams.' }}</h2>
       <p class="section-copy">
-        A recruiter-friendly view of how I work: deep native Android delivery, architecture discipline,
-        reliable platform engineering, realtime product experience, and team leadership.
+        {{
+          isFa
+            ? fa.skills.copy
+            : 'A recruiter-friendly view of how I work: deep native Android delivery, architecture discipline, reliable platform engineering, realtime product experience, and team leadership.'
+        }}
       </p>
     </div>
 
