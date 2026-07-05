@@ -297,6 +297,7 @@ main {
 }
 
 .brand {
+  position: relative;
   display: grid;
   width: 46px;
   height: 46px;
@@ -306,6 +307,76 @@ main {
   background: linear-gradient(135deg, rgba(143, 185, 201, 0.16), rgba(201, 166, 107, 0.1));
   font-family: Sora, sans-serif;
   font-weight: 800;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.brand::after {
+  position: absolute;
+  inset: 1px;
+  content: '';
+  border-radius: 7px;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.16), transparent 36%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.045), transparent);
+  pointer-events: none;
+}
+
+.brand:hover {
+  border-color: rgba(143, 185, 201, 0.38);
+  box-shadow: 0 14px 34px rgba(143, 185, 201, 0.12);
+  transform: translateY(-1px);
+}
+
+.logo-mark {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+
+.logo-mark-frame {
+  fill: url('#logo-fill');
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.logo-mark-orbit,
+.logo-mark-cut,
+.logo-mark-terminal {
+  fill: none;
+  stroke: url('#logo-stroke');
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-mark-orbit {
+  opacity: 0.26;
+  stroke-width: 1.2;
+}
+
+.logo-mark-initials {
+  fill: #eef6f7;
+  font-family: Sora, Inter, sans-serif;
+  font-size: 15.8px;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.logo-mark-cut {
+  opacity: 0.72;
+  stroke-width: 1.6;
+}
+
+.logo-mark-terminal {
+  opacity: 0.46;
+  stroke-width: 1.45;
+}
+
+.logo-mark-dot {
+  fill: var(--gold);
+  opacity: 0.84;
 }
 
 .desktop-links {
@@ -540,8 +611,7 @@ h3 {
 .section-heading p,
 .glass-panel p,
 .timeline-card p,
-.project-body span,
-.testimonial-card p {
+.project-body span {
   color: var(--text-soft);
   line-height: 1.68;
 }
@@ -573,7 +643,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.testimonial-card,
 .contact-form {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
@@ -590,7 +659,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.testimonial-card,
 .contact-form {
   position: relative;
 }
@@ -600,7 +668,6 @@ h3 {
 .skill-card::before,
 .timeline-card::before,
 .project-card::before,
-.testimonial-card::before,
 .contact-form::before {
   position: absolute;
   inset: 0;
@@ -618,7 +685,6 @@ h3 {
 .skill-card:hover::before,
 .timeline-card:hover::before,
 .project-card:hover::before,
-.testimonial-card:hover::before,
 .contact-form:hover::before {
   opacity: 1;
 }
@@ -628,7 +694,6 @@ h3 {
 .skill-card > *,
 .timeline-card > *,
 .project-card > *,
-.testimonial-card > *,
 .contact-form > * {
   position: relative;
   z-index: 2;
@@ -840,8 +905,7 @@ h3 {
 
 .signal-card span,
 .timeline-card span,
-.project-body p,
-.testimonial-card span {
+.project-body p {
   color: var(--mint);
   font-size: 0.78rem;
   font-weight: 800;
@@ -902,8 +966,7 @@ h3 {
 }
 
 .skills-grid,
-.projects-grid,
-.testimonials-section {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
@@ -1273,14 +1336,6 @@ h3 {
   transform: scale(0.985) translateY(12px);
 }
 
-.testimonial-card {
-  padding: 28px;
-}
-
-.testimonial-card svg {
-  color: var(--gold);
-}
-
 .contact-methods {
   display: grid;
   gap: 12px;
@@ -1597,8 +1652,7 @@ h3 {
   }
 
   .skills-grid,
-  .projects-grid,
-  .testimonials-section {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 }

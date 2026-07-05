@@ -10,7 +10,6 @@ import HeroSection from './components/HeroSection.vue';
 import ProjectsSection from './components/ProjectsSection.vue';
 import SiteNav from './components/SiteNav.vue';
 import SkillsSection from './components/SkillsSection.vue';
-import TestimonialsSection from './components/TestimonialsSection.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -165,8 +164,7 @@ onMounted(() => {
     });
   });
 
-  const interactiveCardSelector =
-    '.project-card, .skill-card, .timeline-card, .testimonial-card, .metric-strip div';
+  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div';
   let tiltFrame = 0;
   let latestTiltEvent: PointerEvent | null = null;
 
@@ -265,8 +263,7 @@ onMounted(() => {
   document.addEventListener('click', runSectionTransition);
   cleanupCallbacks.push(() => document.removeEventListener('click', runSectionTransition));
 
-  const burstTargets =
-    'a, button, .project-card, .skill-chip, .timeline-card, .testimonial-card, .metric-strip div';
+  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div';
   const createBurst = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
 
@@ -324,7 +321,6 @@ onUnmounted(() => {
     <SkillsSection />
     <ExperienceSection />
     <ProjectsSection />
-    <TestimonialsSection />
     <ContactSection />
   </main>
   <footer class="site-footer">

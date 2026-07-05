@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Download, Menu, X } from '@lucide/vue';
 import { storeToRefs } from 'pinia';
+import LogoMark from './LogoMark.vue';
 import { useUiStore } from '../stores/ui';
 
 const links = ['about', 'skills', 'experience', 'projects', 'contact'];
@@ -11,7 +12,7 @@ const { isMenuOpen } = storeToRefs(ui);
 <template>
   <header class="site-nav">
     <a href="#home" class="brand" aria-label="Amirreza Haghani home" @click="ui.closeMenu">
-      <span>AH</span>
+      <LogoMark />
     </a>
 
     <nav class="desktop-links" aria-label="Primary navigation">

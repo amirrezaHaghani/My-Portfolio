@@ -211,16 +211,3 @@ export const projects: Project[] = [
     websiteUrl: 'https://vesam24.co/',
   },
 ];
-
-export const testimonials = [
-  {
-    quote:
-      'Amirreza brings architecture discipline, Android depth, and calm product judgment to complex mobile work.',
-    author: 'Engineering collaborator',
-  },
-  {
-    quote:
-      'He improves the codebase while shipping, documents decisions clearly, and makes production Android work easier for the team.',
-    author: 'Product teammate',
-  },
-];
