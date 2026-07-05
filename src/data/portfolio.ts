@@ -22,6 +22,11 @@ export type Project = {
   accent: string;
   imageUrl: string;
   imageAlt: string;
+  preview?: 'pardeabi-tv';
+  previewImages?: {
+    home: string;
+    movies: string[];
+  };
   stats: string[];
   websiteUrl: string;
   storeUrl?: string;
@@ -151,6 +156,47 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: 'Parde Abi VOD',
+    category: 'Entertainment',
+    description:
+      'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
+    accent: '#8fb9c9',
+    technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
+    imageUrl: 'https://pardeabi.ir/_nuxt/home-banner.D1rlQDMZ.webp',
+    imageAlt: 'Parde Abi VOD Android TV and mobile preview',
+    preview: 'pardeabi-tv',
+    previewImages: {
+      home: 'https://pardeabi.ir/_nuxt/home-banner.D1rlQDMZ.webp',
+      movies: [
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/15798-obsession.jpg',
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27086-the-get-out.jpg',
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27073-heavenly-ever-after.jpg',
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27052-deep-water.jpg',
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27041-infiltrate.jpg',
+        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27025-vengeance.jpg',
+      ],
+    },
+    stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
+    websiteUrl: 'https://pardeabi.ir/',
+    storeLinks: [
+      { label: 'Myket', url: 'https://myket.ir/app/com.pardeabi.vod' },
+      { label: 'Bazaar', url: 'https://cafebazaar.ir/app/com.pardeabi.vod' },
+    ],
+  },
+  {
+    title: 'Badesaba Calendar',
+    category: 'Religious',
+    description:
+      'A high-traffic Azan and calendar app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
+    technologies: ['Kotlin', 'Coroutines', 'Location', 'Notifications'],
+    accent: '#c9a66b',
+    imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
+    imageAlt: 'Badesaba calendar app screenshot',
+    stats: ['39M Bazaar installs', '4.7 rating', '1300+ Iranian cities'],
+    websiteUrl: 'https://badesaba.ir/',
+    storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.badesaba',
+  },
+  {
     title: 'Habal Al-Matin Quran',
     category: 'Religious',
     description:
@@ -177,19 +223,6 @@ export const projects: Project[] = [
     storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.babonnaeim',
   },
   {
-    title: 'Badesaba Calendar',
-    category: 'Religious',
-    description:
-      'A high-traffic Azan and calendar app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
-    technologies: ['Kotlin', 'Coroutines', 'Location', 'Notifications'],
-    accent: '#c9a66b',
-    imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
-    imageAlt: 'Badesaba calendar app screenshot',
-    stats: ['39M Bazaar installs', '4.7 rating', '1300+ Iranian cities'],
-    websiteUrl: 'https://badesaba.ir/',
-    storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.badesaba',
-  },
-  {
     title: 'Hamrah Doctor',
     category: 'Healthcare',
     description:
@@ -213,21 +246,5 @@ export const projects: Project[] = [
     imageAlt: 'Vesam educational app platform preview',
     stats: ['60+ platform features', '160+ education brands', 'Live/offline learning'],
     websiteUrl: 'https://vesam24.co/',
-  },
-  {
-    title: 'Parde Abi VOD',
-    category: 'Entertainment',
-    description:
-      'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
-    accent: '#8fb9c9',
-    technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
-    imageUrl: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
-    imageAlt: 'Parde Abi VOD Android app screenshot',
-    stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
-    websiteUrl: 'https://pardeabi.ir/',
-    storeLinks: [
-      { label: 'Myket', url: 'https://myket.ir/app/com.pardeabi.vod' },
-      { label: 'Bazaar', url: 'https://cafebazaar.ir/app/com.pardeabi.vod' },
-    ],
   },
 ];

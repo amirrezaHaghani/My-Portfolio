@@ -1244,6 +1244,160 @@ h3 {
   transform: scale(1.07);
 }
 
+.project-card:hover .pardeabi-tv-preview img {
+  transform: scale(1.01);
+}
+
+.pardeabi-tv-preview {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  isolation: isolate;
+}
+
+.pardeabi-tv-preview::before {
+  position: absolute;
+  inset: 14% 6% 18%;
+  z-index: -1;
+  content: '';
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent), transparent 64%), transparent 68%);
+  filter: blur(22px);
+  opacity: 0.75;
+}
+
+.tv-device {
+  position: absolute;
+  display: grid;
+  width: min(64%, 340px);
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)),
+    #06090e;
+  box-shadow: 0 24px 62px rgba(0, 0, 0, 0.34);
+  transform-origin: center bottom;
+}
+
+.tv-device::after {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  width: 34%;
+  height: 8px;
+  content: '';
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(232, 243, 255, 0.18), transparent);
+  transform: translateX(-50%);
+}
+
+.tv-device i {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 24%;
+  height: 14px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, rgba(232, 243, 255, 0.16), rgba(232, 243, 255, 0.03));
+  transform: translateX(-50%);
+}
+
+.tv-device-primary {
+  left: 7%;
+  top: 24%;
+  transform: rotate(-5deg);
+}
+
+.tv-device-secondary {
+  right: 6%;
+  top: 14%;
+  transform: rotate(5deg) scale(0.94);
+}
+
+.tv-screen {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #05070d;
+}
+
+.tv-screen::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 38%),
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.16), transparent 24%);
+  pointer-events: none;
+}
+
+.tv-screen > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.tv-screen span {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  z-index: 2;
+  min-height: 22px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(5, 7, 13, 0.72);
+  color: rgba(246, 251, 255, 0.86);
+  font-size: 0.66rem;
+  font-weight: 850;
+  line-height: 1;
+  backdrop-filter: blur(8px);
+}
+
+.movie-screen {
+  padding: 10px;
+  background:
+    radial-gradient(circle at 16% 10%, color-mix(in srgb, var(--accent), transparent 74%), transparent 50%),
+    #080b11;
+}
+
+.movie-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  height: 100%;
+}
+
+.movie-rail img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 4px;
+  opacity: 0.94;
+  transform: none;
+}
+
+.project-card:hover .tv-device-primary {
+  transform: translateY(-5px) rotate(-4deg);
+}
+
+.project-card:hover .tv-device-secondary {
+  transform: translateY(5px) rotate(4deg) scale(0.94);
+}
+
+.project-card:hover .tv-device {
+  border-color: color-mix(in srgb, var(--accent), white 20%);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease;
+}
+
 .project-shot-overlay {
   position: absolute;
   inset: 0;

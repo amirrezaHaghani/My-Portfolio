@@ -68,7 +68,32 @@ const setProjectFilter = (filter: ProjectFilter) => {
       <article v-for="project in filteredProjects" :key="project.title" class="project-card reveal">
         <AndroidMascot />
         <div class="project-shot" :style="{ '--accent': project.accent }">
-          <img :src="project.imageUrl" :alt="project.imageAlt" loading="lazy" />
+          <div v-if="project.preview === 'pardeabi-tv' && project.previewImages" class="pardeabi-tv-preview">
+            <figure class="tv-device tv-device-primary">
+              <div class="tv-screen">
+                <img :src="project.previewImages.home" alt="Parde Abi home screen preview" loading="lazy" />
+                <span>Home</span>
+              </div>
+              <i aria-hidden="true"></i>
+            </figure>
+
+            <figure class="tv-device tv-device-secondary">
+              <div class="tv-screen movie-screen">
+                <div class="movie-rail">
+                  <img
+                    v-for="movie in project.previewImages.movies"
+                    :key="movie"
+                    :src="movie"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+                <span>Movies</span>
+              </div>
+              <i aria-hidden="true"></i>
+            </figure>
+          </div>
+          <img v-else :src="project.imageUrl" :alt="project.imageAlt" loading="lazy" />
           <div class="project-shot-overlay" aria-hidden="true"></div>
         </div>
         <div class="project-body">
