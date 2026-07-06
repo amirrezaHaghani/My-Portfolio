@@ -865,6 +865,12 @@ h3 {
   transition: opacity 180ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+:root[dir='rtl'] .android-mascot {
+  right: auto;
+  left: 10px;
+  transform: translate3d(-22px, -20px, 0) rotate(-7deg) scale(0.72);
+}
+
 .android-avatar {
   display: block;
   width: 100%;
@@ -886,6 +892,12 @@ h3 {
   opacity: 0;
   transform: rotate(-8deg) scaleX(0.2);
   transform-origin: center;
+}
+
+:root[dir='rtl'] .android-wink-lid {
+  right: auto;
+  left: 24px;
+  transform: rotate(8deg) scaleX(0.2);
 }
 
 .android-spark {
@@ -924,9 +936,19 @@ h3 {
   left: 2px;
 }
 
+:root[dir='rtl'] .android-spark-one {
+  right: 2px;
+  left: auto;
+}
+
 .android-spark-two {
   right: 0;
   bottom: 24px;
+}
+
+:root[dir='rtl'] .android-spark-two {
+  right: auto;
+  left: 0;
 }
 
 .project-card:hover .android-mascot,
@@ -949,6 +971,13 @@ h3 {
 .skill-card:hover .android-mascot--wink .android-wink-lid,
 .skill-card:focus-within .android-mascot--wink .android-wink-lid {
   animation: android-wink 1.05s ease-in-out 160ms 2;
+}
+
+:root[dir='rtl'] .project-card:hover .android-mascot--wink .android-wink-lid,
+:root[dir='rtl'] .project-card:focus-within .android-mascot--wink .android-wink-lid,
+:root[dir='rtl'] .skill-card:hover .android-mascot--wink .android-wink-lid,
+:root[dir='rtl'] .skill-card:focus-within .android-mascot--wink .android-wink-lid {
+  animation-name: android-wink-rtl;
 }
 
 .project-card:hover .android-mascot--nod .android-avatar,
@@ -2013,6 +2042,21 @@ h3 {
   68% {
     opacity: 1;
     transform: rotate(-8deg) scaleX(1);
+  }
+}
+
+@keyframes android-wink-rtl {
+  0%,
+  38%,
+  100% {
+    opacity: 0;
+    transform: rotate(8deg) scaleX(0.2);
+  }
+
+  52%,
+  68% {
+    opacity: 1;
+    transform: rotate(8deg) scaleX(1);
   }
 }
 
