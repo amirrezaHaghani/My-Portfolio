@@ -131,10 +131,12 @@ body {
 
 :root[dir='rtl'] #about > .section-heading {
   grid-column: 2;
+  grid-row: 1;
 }
 
 :root[dir='rtl'] #about > .glass-panel {
   grid-column: 1;
+  grid-row: 1;
 }
 
 :root[dir='rtl'] .scroll-progress,
@@ -2169,6 +2171,7 @@ h3 {
   :root[dir='rtl'] #about > .section-heading,
   :root[dir='rtl'] #about > .glass-panel {
     grid-column: auto;
+    grid-row: auto;
   }
 
   .hero-section {
