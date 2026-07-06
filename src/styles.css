@@ -98,22 +98,40 @@ body {
 }
 
 :root[dir='rtl'] .site-nav {
+  direction: ltr;
   padding: 0 18px 0 14px;
+}
+
+:root[dir='rtl'] .desktop-links,
+:root[dir='rtl'] .nav-cta,
+:root[dir='rtl'] .language-toggle,
+:root[dir='rtl'] .mobile-panel,
+:root[dir='rtl'] .hero-section,
+:root[dir='rtl'] .two-column,
+:root[dir='rtl'] .contact-layout,
+:root[dir='rtl'] .metric-strip,
+:root[dir='rtl'] .skills-grid,
+:root[dir='rtl'] .projects-grid,
+:root[dir='rtl'] .site-footer {
+  direction: ltr;
+}
+
+:root[dir='rtl'] .desktop-links a,
+:root[dir='rtl'] .mobile-panel a,
+:root[dir='rtl'] .mobile-panel button,
+:root[dir='rtl'] .metric-strip div,
+:root[dir='rtl'] .skill-card,
+:root[dir='rtl'] .project-card,
+:root[dir='rtl'] .contact-layout > *,
+:root[dir='rtl'] .two-column > *,
+:root[dir='rtl'] .hero-copy,
+:root[dir='rtl'] .signal-card {
+  direction: rtl;
 }
 
 :root[dir='rtl'] .scroll-progress,
 :root[dir='rtl'] .hud-track i {
   transform-origin: right center;
-}
-
-:root[dir='rtl'] .gamification-hud {
-  right: auto;
-  left: 22px;
-}
-
-:root[dir='rtl'] .achievement-toast {
-  right: auto;
-  left: 24px;
 }
 
 :root[dir='rtl'] .logo-mark-initials,
@@ -674,19 +692,6 @@ main {
   padding-top: 80px;
 }
 
-:root[dir='rtl'] .hero-section {
-  grid-template-columns: minmax(330px, 0.92fr) minmax(0, 1.08fr);
-}
-
-:root[dir='rtl'] .hero-copy {
-  grid-column: 2;
-}
-
-:root[dir='rtl'] .hero-visual {
-  grid-column: 1;
-  justify-items: start;
-}
-
 .eyebrow {
   margin: 0 0 14px;
   color: var(--mint);
@@ -1065,21 +1070,6 @@ h3 {
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
   gap: 44px;
   align-items: start;
-}
-
-:root[dir='rtl'] .two-column,
-:root[dir='rtl'] .contact-layout {
-  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
-}
-
-:root[dir='rtl'] .two-column > .section-heading,
-:root[dir='rtl'] .contact-layout > .section-heading {
-  grid-column: 2;
-}
-
-:root[dir='rtl'] .two-column > .glass-panel,
-:root[dir='rtl'] .contact-layout > .contact-form {
-  grid-column: 1;
 }
 
 .section-heading.centered {
@@ -2106,21 +2096,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  :root[dir='rtl'] .hero-section,
-  :root[dir='rtl'] .two-column,
-  :root[dir='rtl'] .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  :root[dir='rtl'] .hero-copy,
-  :root[dir='rtl'] .hero-visual,
-  :root[dir='rtl'] .two-column > .section-heading,
-  :root[dir='rtl'] .two-column > .glass-panel,
-  :root[dir='rtl'] .contact-layout > .section-heading,
-  :root[dir='rtl'] .contact-layout > .contact-form {
-    grid-column: auto;
-  }
-
   .hero-section {
     gap: 28px;
     min-height: auto;
@@ -2219,21 +2194,11 @@ h3 {
     transform-origin: right bottom;
   }
 
-  :root[dir='rtl'] .gamification-hud {
-    right: auto;
-    left: 12px;
-    transform-origin: left bottom;
-  }
-
   .achievement-toast {
     right: 14px;
     bottom: 62px;
   }
 
-  :root[dir='rtl'] .achievement-toast {
-    right: auto;
-    left: 14px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
