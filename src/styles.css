@@ -870,6 +870,12 @@ h3 {
   transform: translate3d(-22px, -20px, 0) rotate(-7deg) scale(0.72);
 }
 
+:root[dir='rtl'] .project-card .android-mascot,
+:root[dir='rtl'] .skill-card .android-mascot {
+  right: auto;
+  left: 10px;
+}
+
 .android-avatar {
   display: block;
   width: 100%;
@@ -1834,7 +1840,10 @@ h3 {
 }
 
 :root[dir='rtl'] .contact-methods a {
+  direction: ltr;
+  flex-direction: row;
   justify-self: end;
+  text-align: left;
 }
 
 .social-row {
