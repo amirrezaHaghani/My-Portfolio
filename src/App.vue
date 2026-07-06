@@ -254,9 +254,11 @@ onMounted(() => {
       return;
     }
 
+    const transitionOrigin = document.documentElement.dir === 'rtl' ? 'right center' : 'left center';
+
     gsap.fromTo(
       '.section-transition-line',
-      { scaleX: 0, transformOrigin: 'left center', opacity: 1 },
+      { scaleX: 0, transformOrigin: transitionOrigin, opacity: 1 },
       {
         scaleX: 1,
         duration: 0.38,

@@ -49,6 +49,7 @@ body {
 :root[dir='rtl'] button,
 :root[dir='rtl'] input,
 :root[dir='rtl'] textarea {
+  direction: rtl;
   font-family: Vazirmatn, Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -82,8 +83,10 @@ body {
 :root[dir='rtl'] .hero-actions,
 :root[dir='rtl'] .contact-methods,
 :root[dir='rtl'] .project-links,
+:root[dir='rtl'] .project-stats,
 :root[dir='rtl'] .skill-chip-list,
-:root[dir='rtl'] .tech-stack {
+:root[dir='rtl'] .tech-stack,
+:root[dir='rtl'] .filter-bar {
   direction: rtl;
 }
 
@@ -92,6 +95,45 @@ body {
 :root[dir='rtl'] .mobile-panel button,
 :root[dir='rtl'] .eyebrow {
   text-transform: none;
+}
+
+:root[dir='rtl'] .site-nav {
+  padding: 0 18px 0 14px;
+}
+
+:root[dir='rtl'] .scroll-progress,
+:root[dir='rtl'] .hud-track i {
+  transform-origin: right center;
+}
+
+:root[dir='rtl'] .gamification-hud {
+  right: auto;
+  left: 22px;
+}
+
+:root[dir='rtl'] .achievement-toast {
+  right: auto;
+  left: 24px;
+}
+
+:root[dir='rtl'] .logo-mark-initials,
+:root[dir='rtl'] .hud-rank,
+:root[dir='rtl'] .hud-xp,
+:root[dir='rtl'] .tech-stack,
+:root[dir='rtl'] .project-company,
+:root[dir='rtl'] .phone-device,
+:root[dir='rtl'] .tv-device {
+  direction: ltr;
+}
+
+:root[dir='rtl'] .mobile-panel {
+  text-align: right;
+}
+
+:root[dir='rtl'] .mobile-panel a,
+:root[dir='rtl'] .mobile-panel button {
+  justify-content: flex-start;
+  text-align: right;
 }
 
 a {
@@ -437,6 +479,7 @@ main {
 .mobile-panel a,
 .mobile-panel button,
 .language-toggle {
+  align-items: center;
   padding: 10px 12px;
   border: 0;
   border-radius: 8px;
@@ -445,6 +488,11 @@ main {
   font-size: 0.88rem;
   text-transform: capitalize;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.mobile-panel a,
+.mobile-panel button {
+  display: flex;
 }
 
 .desktop-links a:hover,
@@ -626,6 +674,19 @@ main {
   padding-top: 80px;
 }
 
+:root[dir='rtl'] .hero-section {
+  grid-template-columns: minmax(330px, 0.92fr) minmax(0, 1.08fr);
+}
+
+:root[dir='rtl'] .hero-copy {
+  grid-column: 2;
+}
+
+:root[dir='rtl'] .hero-visual {
+  grid-column: 1;
+  justify-items: start;
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: var(--mint);
@@ -692,6 +753,18 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
+}
+
+:root[dir='rtl'] .hero-actions,
+:root[dir='rtl'] .project-links,
+:root[dir='rtl'] .contact-methods a,
+:root[dir='rtl'] .about-kicker,
+:root[dir='rtl'] .location-pill,
+:root[dir='rtl'] .primary-button,
+:root[dir='rtl'] .secondary-button,
+:root[dir='rtl'] .ghost-button,
+:root[dir='rtl'] .nav-cta {
+  flex-direction: row-reverse;
 }
 
 .metric-strip {
@@ -894,6 +967,10 @@ h3 {
   overflow: hidden;
 }
 
+:root[dir='rtl'] .metric-strip div {
+  text-align: right;
+}
+
 .metric-strip dt {
   color: #fff;
   font-family: Sora, sans-serif;
@@ -988,6 +1065,21 @@ h3 {
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
   gap: 44px;
   align-items: start;
+}
+
+:root[dir='rtl'] .two-column,
+:root[dir='rtl'] .contact-layout {
+  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
+}
+
+:root[dir='rtl'] .two-column > .section-heading,
+:root[dir='rtl'] .contact-layout > .section-heading {
+  grid-column: 2;
+}
+
+:root[dir='rtl'] .two-column > .glass-panel,
+:root[dir='rtl'] .contact-layout > .contact-form {
+  grid-column: 1;
 }
 
 .section-heading.centered {
@@ -1114,6 +1206,11 @@ h3 {
   line-height: 1.58;
 }
 
+:root[dir='rtl'] .skill-proof-list li {
+  padding-right: 18px;
+  padding-left: 0;
+}
+
 .skill-proof-list li::before {
   position: absolute;
   top: 0.72em;
@@ -1124,6 +1221,11 @@ h3 {
   content: '';
   background: var(--accent-gradient-soft);
   box-shadow: 0 0 12px rgba(139, 210, 189, 0.24);
+}
+
+:root[dir='rtl'] .skill-proof-list li::before {
+  right: 0;
+  left: auto;
 }
 
 .skill-chip-list {
@@ -1175,11 +1277,20 @@ h3 {
   transform-origin: top center;
 }
 
+:root[dir='rtl'] .timeline::before {
+  right: 11px;
+  left: auto;
+}
+
 .timeline-item {
   position: relative;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);
   gap: 22px;
+}
+
+:root[dir='rtl'] .timeline-item {
+  grid-template-columns: 24px minmax(0, 1fr);
 }
 
 .timeline-dot {
@@ -1199,6 +1310,11 @@ h3 {
   padding-left: 18px;
   color: var(--text-muted);
   line-height: 1.62;
+}
+
+:root[dir='rtl'] .timeline-card ul {
+  padding-right: 18px;
+  padding-left: 0;
 }
 
 .company {
@@ -1660,6 +1776,10 @@ h3 {
   transform: translateX(2px);
 }
 
+:root[dir='rtl'] .project-links a:hover {
+  transform: translateX(-2px);
+}
+
 .project-links a:hover svg {
   animation: icon-hop 520ms ease;
 }
@@ -1685,10 +1805,18 @@ h3 {
   color: rgba(246, 251, 255, 0.78);
 }
 
+:root[dir='rtl'] .contact-methods a {
+  justify-self: end;
+}
+
 .social-row {
   display: flex;
   gap: 10px;
   margin-top: 22px;
+}
+
+:root[dir='rtl'] .social-row {
+  justify-content: flex-end;
 }
 
 .social-row a {
@@ -1730,6 +1858,12 @@ h3 {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
+:root[dir='rtl'] .contact-form input,
+:root[dir='rtl'] .contact-form textarea {
+  direction: rtl;
+  text-align: right;
+}
+
 .contact-form input {
   height: 48px;
   padding: 0 14px;
@@ -1762,6 +1896,10 @@ h3 {
   margin: 0 auto;
   padding: 34px 0 46px;
   color: rgba(246, 251, 255, 0.62);
+}
+
+:root[dir='rtl'] .site-footer {
+  direction: rtl;
 }
 
 @keyframes drift {
@@ -1968,6 +2106,21 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  :root[dir='rtl'] .hero-section,
+  :root[dir='rtl'] .two-column,
+  :root[dir='rtl'] .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  :root[dir='rtl'] .hero-copy,
+  :root[dir='rtl'] .hero-visual,
+  :root[dir='rtl'] .two-column > .section-heading,
+  :root[dir='rtl'] .two-column > .glass-panel,
+  :root[dir='rtl'] .contact-layout > .section-heading,
+  :root[dir='rtl'] .contact-layout > .contact-form {
+    grid-column: auto;
+  }
+
   .hero-section {
     gap: 28px;
     min-height: auto;
@@ -2066,9 +2219,20 @@ h3 {
     transform-origin: right bottom;
   }
 
+  :root[dir='rtl'] .gamification-hud {
+    right: auto;
+    left: 12px;
+    transform-origin: left bottom;
+  }
+
   .achievement-toast {
     right: 14px;
     bottom: 62px;
+  }
+
+  :root[dir='rtl'] .achievement-toast {
+    right: auto;
+    left: 14px;
   }
 }
 
