@@ -129,6 +129,14 @@ body {
   direction: rtl;
 }
 
+:root[dir='rtl'] #about > .section-heading {
+  grid-column: 2;
+}
+
+:root[dir='rtl'] #about > .glass-panel {
+  grid-column: 1;
+}
+
 :root[dir='rtl'] .scroll-progress,
 :root[dir='rtl'] .hud-track i {
   transform-origin: right center;
@@ -2156,6 +2164,11 @@ h3 {
   .two-column,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  :root[dir='rtl'] #about > .section-heading,
+  :root[dir='rtl'] #about > .glass-panel {
+    grid-column: auto;
   }
 
   .hero-section {
