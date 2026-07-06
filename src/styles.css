@@ -760,16 +760,26 @@ h3 {
   margin-top: 32px;
 }
 
-:root[dir='rtl'] .hero-actions,
-:root[dir='rtl'] .project-links,
-:root[dir='rtl'] .contact-methods a,
-:root[dir='rtl'] .about-kicker,
-:root[dir='rtl'] .location-pill,
 :root[dir='rtl'] .primary-button,
 :root[dir='rtl'] .secondary-button,
 :root[dir='rtl'] .ghost-button,
-:root[dir='rtl'] .nav-cta {
-  flex-direction: row-reverse;
+:root[dir='rtl'] .nav-cta,
+:root[dir='rtl'] .project-links a,
+:root[dir='rtl'] .contact-methods a,
+:root[dir='rtl'] .about-kicker,
+:root[dir='rtl'] .location-pill {
+  direction: rtl;
+}
+
+:root[dir='rtl'] .primary-button svg,
+:root[dir='rtl'] .secondary-button svg,
+:root[dir='rtl'] .ghost-button svg,
+:root[dir='rtl'] .nav-cta svg,
+:root[dir='rtl'] .project-links svg,
+:root[dir='rtl'] .contact-methods svg,
+:root[dir='rtl'] .about-kicker svg,
+:root[dir='rtl'] .location-pill svg {
+  order: -1;
 }
 
 .metric-strip {
