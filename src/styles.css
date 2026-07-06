@@ -776,7 +776,6 @@ h3 {
 :root[dir='rtl'] .ghost-button svg,
 :root[dir='rtl'] .nav-cta svg,
 :root[dir='rtl'] .project-links svg,
-:root[dir='rtl'] .contact-methods svg,
 :root[dir='rtl'] .about-kicker svg,
 :root[dir='rtl'] .location-pill svg {
   order: -1;
