@@ -16,7 +16,7 @@ const displayedMetrics = computed(() => (isFa.value ? fa.metrics : metrics));
   <section id="home" class="hero-section section-shell">
     <div class="hero-copy reveal">
       <p class="eyebrow">{{ isFa ? fa.hero.eyebrow : 'Senior Android engineer / Kotlin specialist' }}</p>
-      <h1>{{ profile.name }}</h1>
+      <h1>{{ isFa ? fa.hero.name : profile.name }}</h1>
       <p class="hero-role">{{ isFa ? fa.hero.role : profile.role }}</p>
       <p class="hero-tagline">{{ isFa ? fa.hero.tagline : profile.tagline }}</p>
 

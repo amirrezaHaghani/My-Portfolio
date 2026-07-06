@@ -15,6 +15,7 @@ export const fa = {
     mobileToggle: 'تغییر زبان',
   },
   hero: {
+    name: 'امیررضا حقانی',
     eyebrow: 'توسعه‌دهنده ارشد اندروید / متخصص Kotlin',
     role: 'Senior Android Developer',
     tagline:
