@@ -805,9 +805,10 @@ h3 {
 
 h1 {
   max-width: 760px;
-  overflow: hidden;
+  overflow: visible;
+  padding: 0.02em 0 0.09em;
   font-size: clamp(3.35rem, 8.4vw, 6.85rem);
-  line-height: 0.96;
+  line-height: 1.04;
 }
 
 h2 {

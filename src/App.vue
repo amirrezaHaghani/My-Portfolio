@@ -43,7 +43,7 @@ onMounted(() => {
       { y: 26, clipPath: 'inset(0 0 100% 0)' },
       {
         y: 0,
-        clipPath: 'inset(0 0 0% 0)',
+        clipPath: 'inset(-4% 0 -8% 0)',
         duration: 0.82,
         ease: 'power4.out',
         scrollTrigger: {
