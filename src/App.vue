@@ -173,7 +173,7 @@ onMounted(() => {
     });
   });
 
-  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div';
+  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div, .contact-command-panel, .contact-form';
   let tiltFrame = 0;
   let latestTiltEvent: PointerEvent | null = null;
 
@@ -274,7 +274,7 @@ onMounted(() => {
   document.addEventListener('click', runSectionTransition);
   cleanupCallbacks.push(() => document.removeEventListener('click', runSectionTransition));
 
-  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div';
+  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div, .contact-command-panel, .contact-form';
   const createBurst = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
 

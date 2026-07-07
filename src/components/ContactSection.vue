@@ -79,6 +79,9 @@ async function copyToClipboard(value: string, key: 'email' | 'phone') {
         </a>
       </div>
       <div class="contact-command-panel" aria-label="Contact shortcuts">
+        <span class="contact-orbit contact-orbit-one" aria-hidden="true"></span>
+        <span class="contact-orbit contact-orbit-two" aria-hidden="true"></span>
+        <span class="contact-scanline" aria-hidden="true"></span>
         <p class="contact-panel-label">{{ contactLabels.quickTitle }}</p>
         <div class="contact-signal">
           <span class="signal-dot" aria-hidden="true"></span>
@@ -122,6 +125,7 @@ async function copyToClipboard(value: string, key: 'email' | 'phone') {
     </div>
 
     <form class="contact-form reveal" @submit.prevent="handleSubmit">
+      <span class="form-energy-ring" aria-hidden="true"></span>
       <label>
         {{ isFa ? fa.contact.labels.name : 'Name' }}
         <input type="text" name="name" autocomplete="name" required />
