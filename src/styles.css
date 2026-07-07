@@ -866,7 +866,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.resume-viewer,
 .contact-form {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
@@ -883,7 +882,6 @@ h3 {
 .skill-card,
 .timeline-card,
 .project-card,
-.resume-viewer,
 .contact-form {
   position: relative;
 }
@@ -893,7 +891,6 @@ h3 {
 .skill-card::before,
 .timeline-card::before,
 .project-card::before,
-.resume-viewer::before,
 .contact-form::before {
   position: absolute;
   inset: 0;
@@ -911,7 +908,6 @@ h3 {
 .skill-card:hover::before,
 .timeline-card:hover::before,
 .project-card:hover::before,
-.resume-viewer:hover::before,
 .contact-form:hover::before {
   opacity: 1;
 }
@@ -921,7 +917,6 @@ h3 {
 .skill-card > *,
 .timeline-card > *,
 .project-card > *,
-.resume-viewer > *,
 .contact-form > * {
   position: relative;
   z-index: 2;
@@ -1978,74 +1973,6 @@ h3 {
   transform: scale(0.985) translateY(12px);
 }
 
-.resume-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
-  gap: 34px;
-  align-items: start;
-}
-
-:root[dir='rtl'] .resume-section {
-  direction: ltr;
-}
-
-:root[dir='rtl'] .resume-section > * {
-  direction: rtl;
-}
-
-.resume-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.resume-viewer {
-  display: grid;
-  min-height: 720px;
-  padding: 10px;
-  overflow: hidden;
-  transition: border-color 220ms ease, box-shadow 220ms ease;
-}
-
-.resume-viewer:hover {
-  border-color: rgba(139, 210, 189, 0.26);
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.32), 0 0 40px rgba(139, 210, 189, 0.07);
-}
-
-.resume-viewer-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 46px;
-  padding: 0 12px 10px;
-  color: rgba(246, 251, 255, 0.82);
-  font-weight: 850;
-}
-
-.resume-viewer-top span {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.resume-viewer-top small {
-  border: 1px solid rgba(139, 210, 189, 0.18);
-  border-radius: 999px;
-  padding: 5px 9px;
-  color: var(--mint);
-  font-size: 0.72rem;
-  font-weight: 900;
-}
-
-.resume-viewer iframe {
-  width: 100%;
-  height: 660px;
-  border: 0;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
 .contact-methods {
   display: grid;
   gap: 12px;
@@ -2812,7 +2739,6 @@ h3 {
 
   .hero-section,
   .two-column,
-  .resume-section,
   .contact-layout {
     grid-template-columns: 1fr;
   }
@@ -2944,13 +2870,5 @@ h3 {
   .skill-card:focus-within .android-mascot {
     opacity: 1;
     transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-  }
-
-  .resume-viewer {
-    min-height: 560px;
-  }
-
-  .resume-viewer iframe {
-    height: 500px;
   }
 }
