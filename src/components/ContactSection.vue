@@ -15,15 +15,15 @@ const contactLabels = computed(() =>
   isFa.value
     ? fa.contact
     : {
-        availability: 'Open to senior Android roles, consulting, and product modernization.',
-        response: 'Usually replies within 24 hours',
-        quickTitle: 'Fast lane',
+        availability: 'If your Android product needs cleaner architecture, steadier delivery, or technical leadership, I am happy to talk.',
+        response: 'For serious collaboration, I usually reply the same day',
+        quickTitle: 'Start a conversation',
         copyEmail: 'Copy email',
         copyPhone: 'Copy phone',
         copiedEmail: 'Email copied.',
         copiedPhone: 'Phone number copied.',
         github: 'View GitHub',
-        chips: ['Android leadership', 'Architecture review', 'Kotlin modernization'],
+        chips: ['Product delivery', 'Architecture advisory', 'Android team lead'],
       },
 );
 
