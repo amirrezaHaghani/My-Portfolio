@@ -40,9 +40,10 @@ onMounted(() => {
   gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
     gsap.fromTo(
       element,
-      { y: 18 },
+      { y: 18, opacity: 0.82 },
       {
         y: 0,
+        opacity: 1,
         duration: 0.55,
         ease: 'power2.out',
         scrollTrigger: {
@@ -52,6 +53,60 @@ onMounted(() => {
         },
       },
     );
+  });
+
+  gsap.utils.toArray<HTMLElement>('.section-shell').forEach((section) => {
+    const animatedChildren = section.querySelectorAll<HTMLElement>(
+      '.section-heading, .glass-panel, .skill-card, .timeline-item, .project-card, .contact-form, .contact-command-panel',
+    );
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 72%',
+      end: 'bottom 28%',
+      onEnter: () => {
+        section.classList.add('section-in-view');
+        gsap.fromTo(
+          animatedChildren,
+          { y: 18, scale: 0.985, opacity: 0.72 },
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.58,
+            ease: 'power3.out',
+            stagger: 0.045,
+            overwrite: 'auto',
+          },
+        );
+      },
+      onEnterBack: () => {
+        section.classList.add('section-in-view');
+        gsap.fromTo(
+          animatedChildren,
+          { y: -12, scale: 0.992, opacity: 0.78 },
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.46,
+            ease: 'power2.out',
+            stagger: 0.035,
+            overwrite: 'auto',
+          },
+        );
+      },
+      onLeave: () => section.classList.remove('section-in-view'),
+      onLeaveBack: () => section.classList.remove('section-in-view'),
+    });
+  });
+
+  gsap.to('.hero-copy h1', {
+    textShadow: '0 0 28px rgba(143, 185, 201, 0.18)',
+    duration: 2.4,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
   });
 
   gsap.to('.portrait-ring img', {
@@ -173,7 +228,7 @@ onMounted(() => {
     });
   });
 
-  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div, .contact-command-panel, .contact-form';
+  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .portrait-ring, .contact-command-panel, .contact-form';
   let tiltFrame = 0;
   let latestTiltEvent: PointerEvent | null = null;
 
@@ -204,8 +259,8 @@ onMounted(() => {
     card.style.setProperty('--my', `${event.clientY - bounds.top}px`);
 
     gsap.to(card, {
-      rotateX: y * -5,
-      rotateY: x * 7,
+      rotateX: y * -4.5,
+      rotateY: x * 6.5,
       y: -4,
       duration: 0.35,
       ease: 'power3.out',
@@ -274,7 +329,7 @@ onMounted(() => {
   document.addEventListener('click', runSectionTransition);
   cleanupCallbacks.push(() => document.removeEventListener('click', runSectionTransition));
 
-  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div, .contact-command-panel, .contact-form';
+  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .contact-command-panel, .contact-form';
   const createBurst = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
 
