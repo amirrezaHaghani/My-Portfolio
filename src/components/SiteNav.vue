@@ -6,7 +6,7 @@ import LogoMark from './LogoMark.vue';
 import { fa } from '../data/i18n';
 import { useUiStore } from '../stores/ui';
 
-const links = ['about', 'skills', 'experience', 'projects', 'contact'];
+const links = ['about', 'skills', 'experience', 'projects', 'resume', 'contact'];
 const ui = useUiStore();
 const { isMenuOpen, locale } = storeToRefs(ui);
 const isFa = computed(() => locale.value === 'fa');

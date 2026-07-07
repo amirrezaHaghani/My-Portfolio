@@ -8,6 +8,7 @@ import ContactSection from './components/ContactSection.vue';
 import ExperienceSection from './components/ExperienceSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import ProjectsSection from './components/ProjectsSection.vue';
+import ResumeSection from './components/ResumeSection.vue';
 import SiteNav from './components/SiteNav.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import { useUiStore } from './stores/ui';
@@ -57,7 +58,7 @@ onMounted(() => {
 
   gsap.utils.toArray<HTMLElement>('.section-shell').forEach((section) => {
     const animatedChildren = section.querySelectorAll<HTMLElement>(
-      '.section-heading, .glass-panel, .skill-card, .timeline-item, .project-card, .contact-form, .contact-command-panel',
+      '.section-heading, .glass-panel, .skill-card, .timeline-item, .project-card, .resume-viewer, .contact-form, .contact-command-panel',
     );
 
     ScrollTrigger.create({
@@ -228,7 +229,7 @@ onMounted(() => {
     });
   });
 
-  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .portrait-ring, .contact-command-panel, .contact-form';
+  const interactiveCardSelector = '.project-card, .skill-card, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .portrait-ring, .resume-viewer, .contact-command-panel, .contact-form';
   let tiltFrame = 0;
   let latestTiltEvent: PointerEvent | null = null;
 
@@ -329,7 +330,7 @@ onMounted(() => {
   document.addEventListener('click', runSectionTransition);
   cleanupCallbacks.push(() => document.removeEventListener('click', runSectionTransition));
 
-  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .contact-command-panel, .contact-form';
+  const burstTargets = 'a, button, .project-card, .skill-chip, .timeline-card, .metric-strip div, .glass-panel, .signal-card, .resume-viewer, .contact-command-panel, .contact-form';
   const createBurst = (event: PointerEvent) => {
     const target = event.target as HTMLElement | null;
 
@@ -387,6 +388,7 @@ onUnmounted(() => {
     <SkillsSection />
     <ExperienceSection />
     <ProjectsSection />
+    <ResumeSection />
     <ContactSection />
   </main>
   <footer class="site-footer">
