@@ -37,6 +37,24 @@ onMounted(() => {
     { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
   );
 
+  gsap.utils.toArray<HTMLElement>('.hero-copy h1, .hero-role, .section-heading h2').forEach((element) => {
+    gsap.fromTo(
+      element,
+      { y: 26, clipPath: 'inset(0 0 100% 0)' },
+      {
+        y: 0,
+        clipPath: 'inset(0 0 0% 0)',
+        duration: 0.82,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 86%',
+          once: true,
+        },
+      },
+    );
+  });
+
   gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
     gsap.fromTo(
       element,
@@ -115,6 +133,19 @@ onMounted(() => {
     repeat: -1,
     yoyo: true,
     ease: 'sine.inOut',
+  });
+
+  gsap.utils.toArray<HTMLElement>('.project-shot-overlay').forEach((element) => {
+    gsap.to(element, {
+      backgroundPosition: '120% 50%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.8,
+      },
+    });
   });
 
   gsap.to('.scroll-progress', {
@@ -323,6 +354,19 @@ onMounted(() => {
       },
     );
 
+    gsap.fromTo(
+      '.motion-curtain span',
+      { scaleX: 0, transformOrigin: transitionOrigin },
+      {
+        scaleX: 1,
+        duration: 0.42,
+        ease: 'power4.inOut',
+        stagger: 0.055,
+        yoyo: true,
+        repeat: 1,
+      },
+    );
+
     showAchievement('NAV XP');
   };
 
@@ -372,6 +416,11 @@ onUnmounted(() => {
 <template>
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="section-transition-line" aria-hidden="true"></div>
+  <div class="motion-curtain" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="gamification-hud" aria-hidden="true">
     <span class="hud-rank">LV 8</span>

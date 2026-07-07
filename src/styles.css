@@ -212,6 +212,36 @@ main {
   transform: translateX(-50%) scaleX(0);
 }
 
+.motion-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 31;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  pointer-events: none;
+}
+
+.motion-curtain span {
+  display: block;
+  transform: scaleX(0);
+  background:
+    linear-gradient(90deg, rgba(5, 7, 13, 0.96), rgba(8, 18, 24, 0.92)),
+    radial-gradient(circle at 20% 50%, rgba(139, 210, 189, 0.18), transparent 34%);
+  box-shadow: inset 0 -1px 0 rgba(139, 210, 189, 0.08);
+}
+
+.motion-curtain span:nth-child(2) {
+  background:
+    linear-gradient(90deg, rgba(6, 10, 16, 0.94), rgba(13, 21, 26, 0.92)),
+    radial-gradient(circle at 74% 44%, rgba(201, 166, 107, 0.12), transparent 36%);
+}
+
+.motion-curtain span:nth-child(3) {
+  background:
+    linear-gradient(90deg, rgba(5, 7, 13, 0.96), rgba(8, 18, 24, 0.92)),
+    radial-gradient(circle at 44% 50%, rgba(143, 185, 201, 0.16), transparent 36%);
+}
+
 .cursor-glow {
   position: fixed;
   top: 0;
@@ -739,6 +769,7 @@ main {
 }
 
 .section-heading h2 {
+  overflow: hidden;
   transition: text-shadow 320ms ease, transform 320ms ease;
 }
 
@@ -774,6 +805,7 @@ h3 {
 
 h1 {
   max-width: 760px;
+  overflow: hidden;
   font-size: clamp(3.35rem, 8.4vw, 6.85rem);
   line-height: 0.96;
 }
@@ -791,6 +823,7 @@ h3 {
 }
 
 .hero-role {
+  overflow: hidden;
   margin: 20px 0 0;
   color: var(--gold);
   font-family: Sora, sans-serif;
@@ -1132,6 +1165,8 @@ h3 {
     rgba(255, 255, 255, 0.05);
   box-shadow: 0 30px 100px rgba(143, 185, 201, 0.1);
   overflow: hidden;
+  clip-path: inset(0 round 8px);
+  transition: clip-path 520ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .portrait-ring::before {
@@ -1154,12 +1189,24 @@ h3 {
   animation-duration: 8s;
 }
 
+.portrait-ring:hover {
+  clip-path: inset(10px round 8px);
+  border-color: rgba(139, 210, 189, 0.26);
+  box-shadow: 0 34px 110px rgba(143, 185, 201, 0.12);
+}
+
 .portrait-ring img {
   position: relative;
   z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+}
+
+.portrait-ring:hover img {
+  transform: scale(1.035);
+  filter: contrast(1.04) saturate(1.04);
 }
 
 .signal-card {
@@ -1536,7 +1583,8 @@ h3 {
 
 .project-card {
   overflow: hidden;
-  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  clip-path: inset(0 round 8px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, clip-path 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-card::after {
@@ -1556,6 +1604,7 @@ h3 {
   transform: translateY(-7px);
   border-color: rgba(143, 185, 201, 0.28);
   box-shadow: 0 30px 100px rgba(143, 185, 201, 0.08);
+  clip-path: inset(7px round 8px);
 }
 
 .project-card:hover::after {
@@ -1574,6 +1623,24 @@ h3 {
     linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02));
 }
 
+.project-shot::before {
+  position: absolute;
+  inset: 14px;
+  z-index: 2;
+  content: '';
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 72%);
+  border-radius: 7px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 260ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.project-card:hover .project-shot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .project-shot img {
   width: 100%;
   height: 100%;
@@ -1583,7 +1650,7 @@ h3 {
 }
 
 .project-card:hover .project-shot img {
-  transform: scale(1.07);
+  transform: scale(1.075) translateY(-4px);
 }
 
 .project-card:hover .pardeabi-tv-preview img {
@@ -1858,6 +1925,8 @@ h3 {
   background:
     linear-gradient(180deg, transparent 42%, rgba(5, 7, 13, 0.42)),
     radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--accent), transparent 78%), transparent 16rem);
+  background-size: 100% 100%, 180% 180%;
+  background-position: 0 0, 0% 50%;
   pointer-events: none;
 }
 
@@ -1880,6 +1949,12 @@ h3 {
 .project-body h3 {
   margin-top: 10px;
   font-size: 1.22rem;
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.project-card:hover .project-body h3 {
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .project-company {
