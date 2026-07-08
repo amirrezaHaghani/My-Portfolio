@@ -3420,9 +3420,30 @@ h2 {
 :root[dir='rtl'] .section-heading:not(.centered) .eyebrow,
 :root[dir='rtl'] #contact .eyebrow {
   display: flex;
-  width: 100%;
+  width: fit-content;
   justify-content: flex-start;
   text-align: start;
+}
+
+:root[dir='rtl'] .section-heading,
+:root[dir='rtl'] .section-heading.centered {
+  direction: rtl;
+  justify-items: end;
+  text-align: right;
+}
+
+:root[dir='rtl'] .section-heading .eyebrow,
+:root[dir='rtl'] .section-heading.centered .eyebrow,
+:root[dir='rtl'] #contact .eyebrow {
+  justify-self: end;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+:root[dir='rtl'] .section-heading h2,
+:root[dir='rtl'] .section-heading > p:not(.eyebrow) {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
 }
 
 .section-heading h2,
