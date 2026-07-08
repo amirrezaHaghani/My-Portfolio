@@ -2787,29 +2787,60 @@ h3 {
   }
 }
 
-/* Apps with Love inspired editorial layer */
+/* Apps with Love inspired dark Android editorial layer */
 :root {
-  --text-primary: #080b0f;
-  --text-soft: rgba(8, 11, 15, 0.72);
-  --text-muted: rgba(8, 11, 15, 0.58);
-  --text-faint: rgba(8, 11, 15, 0.42);
-  --cyan: #0f827d;
-  --mint: #14a38f;
-  --gold: #b08b43;
-  --accent-gradient: linear-gradient(135deg, #111111, #14a38f);
-  --accent-gradient-soft: linear-gradient(90deg, #111111, #14a38f, #b08b43);
+  --text-primary: #f6fbff;
+  --text-soft: rgba(229, 240, 252, 0.82);
+  --text-muted: rgba(202, 216, 231, 0.66);
+  --text-faint: rgba(202, 216, 231, 0.48);
+  --cyan: #4ecaff;
+  --mint: #3ddc84;
+  --gold: #c9a66b;
+  --accent-gradient: linear-gradient(135deg, #4ecaff, #3ddc84);
+  --accent-gradient-soft: linear-gradient(90deg, #4ecaff, #3ddc84, #c9a66b);
 }
 
 body {
   background:
-    radial-gradient(circle at 88% 12%, rgba(20, 163, 143, 0.09), transparent 26rem),
-    linear-gradient(180deg, #ffffff 0%, #f7f7f7 48%, #ffffff 100%);
+    radial-gradient(circle at 84% 12%, rgba(61, 220, 132, 0.13), transparent 27rem),
+    radial-gradient(circle at 12% 28%, rgba(78, 202, 255, 0.09), transparent 24rem),
+    linear-gradient(180deg, #05070d 0%, #081018 48%, #05070d 100%);
   color: var(--text-primary);
 }
 
+body::before {
+  position: fixed;
+  top: 22%;
+  left: max(14px, calc((100vw - 1280px) / 2));
+  z-index: 0;
+  width: 1px;
+  height: 54vh;
+  content: '';
+  background: linear-gradient(180deg, transparent, rgba(61, 220, 132, 0.32), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body::after {
+  position: fixed;
+  right: max(16px, calc((100vw - 1280px) / 2));
+  bottom: 13vh;
+  z-index: 0;
+  content: 'Kotlin  /  Compose  /  Flow  /  Hilt  /  Android SDK';
+  color: rgba(61, 220, 132, 0.16);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transform: rotate(-90deg);
+  transform-origin: right bottom;
+}
+
 .animated-bg {
-  opacity: 0.18;
-  mix-blend-mode: multiply;
+  opacity: 0.42;
+  mix-blend-mode: screen;
 }
 
 .animated-bg::before,
@@ -2820,8 +2851,8 @@ body {
 }
 
 .cursor-glow {
-  background: radial-gradient(circle, rgba(20, 163, 143, 0.13), rgba(8, 11, 15, 0.035) 42%, transparent 70%);
-  mix-blend-mode: multiply;
+  background: radial-gradient(circle, rgba(61, 220, 132, 0.15), rgba(78, 202, 255, 0.05) 42%, transparent 70%);
+  mix-blend-mode: screen;
 }
 
 .gamification-hud,
@@ -2831,59 +2862,62 @@ body {
 
 .scroll-progress {
   height: 4px;
-  background: #111;
-  box-shadow: none;
+  background: var(--accent-gradient-soft);
+  box-shadow: 0 0 24px rgba(61, 220, 132, 0.26);
 }
 
 .section-transition-line {
-  background: linear-gradient(90deg, transparent, rgba(8, 11, 15, 0.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(61, 220, 132, 0.52), transparent);
 }
 
 .motion-curtain span {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(247, 247, 247, 0.96)),
-    radial-gradient(circle at 22% 50%, rgba(20, 163, 143, 0.18), transparent 34%);
-  box-shadow: inset 0 -1px 0 rgba(8, 11, 15, 0.08);
+    linear-gradient(90deg, rgba(4, 7, 12, 0.98), rgba(8, 18, 24, 0.96)),
+    radial-gradient(circle at 22% 50%, rgba(61, 220, 132, 0.16), transparent 34%);
+  box-shadow: inset 0 -1px 0 rgba(61, 220, 132, 0.08);
 }
 
 .motion-curtain span:nth-child(2) {
   background:
-    linear-gradient(90deg, rgba(247, 247, 247, 0.98), rgba(255, 255, 255, 0.96)),
-    radial-gradient(circle at 74% 44%, rgba(176, 139, 67, 0.14), transparent 36%);
+    linear-gradient(90deg, rgba(5, 10, 16, 0.98), rgba(10, 22, 25, 0.96)),
+    radial-gradient(circle at 74% 44%, rgba(78, 202, 255, 0.12), transparent 36%);
 }
 
 .motion-curtain span:nth-child(3) {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(247, 247, 247, 0.96)),
-    radial-gradient(circle at 44% 50%, rgba(8, 11, 15, 0.1), transparent 36%);
+    linear-gradient(90deg, rgba(4, 7, 12, 0.98), rgba(8, 18, 24, 0.96)),
+    radial-gradient(circle at 44% 50%, rgba(201, 166, 107, 0.1), transparent 36%);
 }
 
 .site-nav {
   min-height: 78px;
-  border-color: rgba(8, 11, 15, 0.1);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 18px 70px rgba(8, 11, 15, 0.07);
+  border-color: rgba(229, 240, 252, 0.12);
+  background: rgba(5, 8, 14, 0.74);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
 }
 
 .brand {
-  border-color: rgba(8, 11, 15, 0.12);
-  background: #111;
-  color: #fff;
+  border-color: rgba(61, 220, 132, 0.28);
+  background:
+    linear-gradient(145deg, rgba(61, 220, 132, 0.18), rgba(78, 202, 255, 0.08)),
+    #080d14;
+  color: #f6fbff;
+  box-shadow: inset 0 0 0 1px rgba(246, 251, 255, 0.05), 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
 .desktop-links a,
 .mobile-panel a,
 .mobile-panel button,
 .language-toggle {
-  color: rgba(8, 11, 15, 0.7);
+  color: rgba(229, 240, 252, 0.78);
 }
 
 .desktop-links a:hover,
 .mobile-panel a:hover,
 .mobile-panel button:hover,
 .language-toggle:hover {
-  color: #080b0f;
-  background: rgba(8, 11, 15, 0.06);
+  color: #f6fbff;
+  background: rgba(61, 220, 132, 0.1);
 }
 
 .language-toggle,
@@ -2892,24 +2926,25 @@ body {
 .filter-bar button,
 .social-row a,
 .copy-contact-button {
-  border-color: rgba(8, 11, 15, 0.14);
-  background: rgba(255, 255, 255, 0.82);
-  color: #080b0f;
+  border-color: rgba(229, 240, 252, 0.14);
+  background: rgba(246, 251, 255, 0.055);
+  color: #f6fbff;
 }
 
 .nav-cta,
 .primary-button {
-  border-color: #111;
-  background: #111;
-  color: #fff;
-  box-shadow: 0 18px 42px rgba(8, 11, 15, 0.12);
+  border-color: rgba(61, 220, 132, 0.5);
+  background:
+    linear-gradient(135deg, rgba(61, 220, 132, 0.95), rgba(139, 210, 189, 0.9));
+  color: #04100b;
+  box-shadow: 0 18px 42px rgba(61, 220, 132, 0.16);
 }
 
 .nav-cta:hover,
 .primary-button:hover,
 .secondary-button:hover,
 .ghost-button:hover {
-  box-shadow: 0 24px 58px rgba(8, 11, 15, 0.13);
+  box-shadow: 0 24px 58px rgba(61, 220, 132, 0.12);
 }
 
 .section-shell {
@@ -2919,8 +2954,8 @@ body {
 
 .section-shell::before {
   background:
-    radial-gradient(circle at 18% 30%, rgba(20, 163, 143, 0.08), transparent 34%),
-    radial-gradient(circle at 82% 44%, rgba(8, 11, 15, 0.05), transparent 36%);
+    radial-gradient(circle at 18% 30%, rgba(61, 220, 132, 0.08), transparent 34%),
+    radial-gradient(circle at 82% 44%, rgba(78, 202, 255, 0.045), transparent 36%);
 }
 
 .eyebrow,
@@ -2928,13 +2963,20 @@ body {
 .timeline-card span,
 .project-body p,
 .contact-panel-label {
-  color: #0f827d;
+  color: var(--mint);
+}
+
+.eyebrow::before,
+.contact-panel-label::before {
+  content: '// ';
+  color: rgba(78, 202, 255, 0.72);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
 }
 
 h1,
 h2,
 h3 {
-  color: #080b0f;
+  color: #f6fbff;
   font-weight: 900;
 }
 
@@ -2955,7 +2997,7 @@ h2 {
 }
 
 .hero-role {
-  color: #0f827d;
+  color: var(--mint);
   background: none;
   -webkit-text-fill-color: currentColor;
 }
@@ -2978,16 +3020,16 @@ h2 {
 .contact-command-panel,
 .contact-form,
 .signal-card {
-  border-color: rgba(8, 11, 15, 0.1);
+  border-color: rgba(229, 240, 252, 0.11);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(247, 247, 247, 0.86)),
-    #fff;
-  box-shadow: 0 24px 80px rgba(8, 11, 15, 0.07);
+    linear-gradient(145deg, rgba(246, 251, 255, 0.09), rgba(246, 251, 255, 0.035)),
+    rgba(7, 12, 20, 0.78);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(16px);
 }
 
 .metric-strip dt {
-  color: #080b0f;
+  color: #f6fbff;
 }
 
 .metric-strip dd,
@@ -2999,15 +3041,15 @@ h2 {
 }
 
 .portrait-ring {
-  border-color: rgba(8, 11, 15, 0.12);
+  border-color: rgba(229, 240, 252, 0.14);
   background:
-    linear-gradient(145deg, rgba(20, 163, 143, 0.11), rgba(176, 139, 67, 0.08)),
-    #fff;
-  box-shadow: 0 34px 110px rgba(8, 11, 15, 0.12);
+    linear-gradient(145deg, rgba(61, 220, 132, 0.12), rgba(78, 202, 255, 0.08)),
+    #060a11;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.36);
 }
 
 .portrait-ring::after {
-  border-color: rgba(8, 11, 15, 0.12);
+  border-color: rgba(61, 220, 132, 0.18);
 }
 
 .signal-card {
@@ -3051,13 +3093,31 @@ h2 {
   height: 100%;
   min-height: 440px;
   background:
-    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent), transparent 76%), transparent 18rem),
-    linear-gradient(135deg, rgba(8, 11, 15, 0.08), rgba(255, 255, 255, 0.36));
+    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent), transparent 72%), transparent 18rem),
+    linear-gradient(135deg, rgba(61, 220, 132, 0.08), rgba(78, 202, 255, 0.04), rgba(255, 255, 255, 0.02));
 }
 
 .project-body {
+  position: relative;
   display: grid;
   align-content: center;
+}
+
+.project-body::after {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  content: 'fun shipReliableAndroid()';
+  color: rgba(61, 220, 132, 0.1);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: clamp(0.72rem, 1vw, 0.88rem);
+  font-weight: 800;
+  pointer-events: none;
+}
+
+:root[dir='rtl'] .project-body::after {
+  right: auto;
+  left: 22px;
 }
 
 .project-body h3 {
@@ -3065,61 +3125,89 @@ h2 {
   line-height: 1.05;
 }
 
+.project-body h3::before {
+  content: './';
+  color: var(--mint);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.6em;
+}
+
 .project-card:hover .project-body h3 {
-  color: #080b0f;
+  color: #f6fbff;
 }
 
 .tech-stack em,
 .skill-chip,
 .contact-tags span {
-  border-color: rgba(8, 11, 15, 0.12);
-  background: rgba(8, 11, 15, 0.045);
-  color: rgba(8, 11, 15, 0.72);
+  border-color: rgba(229, 240, 252, 0.13);
+  background: rgba(246, 251, 255, 0.045);
+  color: rgba(229, 240, 252, 0.76);
+}
+
+.tech-stack em::before,
+.skill-chip::before {
+  content: '<';
+  color: rgba(61, 220, 132, 0.86);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  margin-inline-end: 2px;
+}
+
+.tech-stack em::after,
+.skill-chip::after {
+  content: ' />';
+  color: rgba(78, 202, 255, 0.72);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  margin-inline-start: 2px;
 }
 
 .filter-bar button.active,
 .filter-bar button:hover,
 .skill-chip:hover,
 .contact-tags span:hover {
-  background: rgba(20, 163, 143, 0.1);
-  color: #080b0f;
+  background: rgba(61, 220, 132, 0.12);
+  color: #f6fbff;
 }
 
 .timeline::before {
-  background: linear-gradient(#111, #14a38f, transparent);
+  background: linear-gradient(rgba(78, 202, 255, 0.6), #3ddc84, transparent);
 }
 
 .timeline-dot {
-  border-color: #f7f7f7;
+  border-color: #05070d;
 }
 
 .contact-form input,
 .contact-form textarea {
-  border-color: rgba(8, 11, 15, 0.12);
+  border-color: rgba(229, 240, 252, 0.12);
   background:
-    linear-gradient(90deg, rgba(20, 163, 143, 0), rgba(20, 163, 143, 0.04), rgba(20, 163, 143, 0)),
-    rgba(255, 255, 255, 0.72);
-  color: #080b0f;
+    linear-gradient(90deg, rgba(61, 220, 132, 0), rgba(61, 220, 132, 0.055), rgba(61, 220, 132, 0)),
+    rgba(0, 0, 0, 0.22);
+  color: #f6fbff;
 }
 
 .contact-form label {
-  color: rgba(8, 11, 15, 0.72);
+  color: rgba(229, 240, 252, 0.72);
 }
 
 .form-status {
-  color: #0f827d;
+  color: var(--mint);
 }
 
 .site-footer,
 .site-footer a {
-  color: rgba(8, 11, 15, 0.68);
+  color: rgba(229, 240, 252, 0.62);
 }
 
 .site-footer a:hover {
-  color: #080b0f;
+  color: #f6fbff;
 }
 
 @media (max-width: 900px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
   .mesh {
     width: 28rem;
     filter: blur(44px);
