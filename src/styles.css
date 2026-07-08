@@ -158,6 +158,24 @@ body {
   grid-row: 1;
 }
 
+:root[dir='rtl'] #contact.contact-layout {
+  grid-template-columns: minmax(340px, 0.95fr) minmax(0, 1.05fr);
+  gap: 52px;
+  align-items: center;
+}
+
+:root[dir='rtl'] #contact > .section-heading {
+  align-self: center;
+  max-width: 620px;
+  justify-self: end;
+}
+
+:root[dir='rtl'] #contact > .contact-form {
+  align-self: center;
+  width: min(100%, 520px);
+  justify-self: start;
+}
+
 :root[dir='rtl'] .scroll-progress,
 :root[dir='rtl'] .hud-track i {
   transform-origin: right center;
@@ -3311,6 +3329,25 @@ h2 {
   margin-top: 34px;
 }
 
+:root[dir='rtl'] #contact .section-heading h2 {
+  max-width: min(590px, 100%);
+  font-size: clamp(2.25rem, 4.2vw, 4rem);
+  line-height: 1.22;
+}
+
+:root[dir='rtl'] #contact .contact-methods {
+  justify-items: start;
+  margin-top: 22px;
+}
+
+:root[dir='rtl'] #contact .contact-command-panel {
+  max-width: 590px;
+}
+
+:root[dir='rtl'] #contact .social-row {
+  justify-content: flex-start;
+}
+
 @media (max-width: 900px) {
   body::before,
   body::after {
@@ -3354,6 +3391,19 @@ h2 {
   :root[dir='rtl'] #contact > .contact-form {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  :root[dir='rtl'] #contact.contact-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  :root[dir='rtl'] #contact > .section-heading,
+  :root[dir='rtl'] #contact > .contact-form {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .hero-section {
