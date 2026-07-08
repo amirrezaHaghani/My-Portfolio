@@ -26,7 +26,7 @@ const localizedExperiences = computed(() =>
 
 <template>
   <section id="experience" class="section-shell">
-    <div class="section-heading reveal">
+    <div class="section-heading centered reveal">
       <p class="eyebrow">{{ isFa ? fa.experience.eyebrow : 'Experience' }}</p>
       <h2>
         {{
