@@ -125,7 +125,13 @@ const setProjectFilter = (filter: ProjectFilter) => {
               <img :src="screen" :alt="`${project.title} store screenshot ${index + 1}`" loading="lazy" />
             </figure>
           </div>
-          <img v-else :src="project.imageUrl" :alt="project.imageAlt" loading="lazy" />
+          <img
+            v-else
+            :class="project.imageFocus ? `project-image-${project.imageFocus}` : undefined"
+            :src="project.imageUrl"
+            :alt="project.imageAlt"
+            loading="lazy"
+          />
           <div class="project-shot-overlay" aria-hidden="true"></div>
         </div>
         <div class="project-body">
