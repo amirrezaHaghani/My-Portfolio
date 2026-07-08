@@ -3024,6 +3024,34 @@ body::after {
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
 }
 
+.section-heading .eyebrow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.section-heading .eyebrow::before {
+  width: 26px;
+  height: 2px;
+  content: '';
+  border-radius: 999px;
+  background: var(--accent-gradient-soft);
+  box-shadow: 0 0 18px rgba(61, 220, 132, 0.18);
+}
+
+.section-heading.centered .eyebrow {
+  justify-content: center;
+  text-align: center;
+}
+
+:root[dir='rtl'] .section-heading:not(.centered) .eyebrow {
+  justify-content: flex-end;
+  text-align: right;
+}
+
 h1,
 h2,
 h3 {
