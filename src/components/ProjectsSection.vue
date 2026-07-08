@@ -127,7 +127,6 @@ const setProjectFilter = (filter: ProjectFilter) => {
           </div>
           <img
             v-else
-            :class="project.imageFocus ? `project-image-${project.imageFocus}` : undefined"
             :src="project.imageUrl"
             :alt="project.imageAlt"
             loading="lazy"

@@ -23,7 +23,6 @@ export type Project = {
   accent: string;
   imageUrl: string;
   imageAlt: string;
-  imageFocus?: 'left-half';
   preview?: 'pardeabi-tv' | 'phone-stack';
   previewImages?: {
     home: string;
@@ -223,7 +222,6 @@ export const projects: Project[] = [
     accent: '#8bd2bd',
     imageUrl: 'https://mymafatih.com/assets/images/png/header.png',
     imageAlt: 'Bab Al-Naim Mafatih app preview',
-    imageFocus: 'left-half',
     stats: ['4.6M Bazaar installs', '4.7 rating', '50 reciters'],
     websiteUrl: 'https://mymafatih.com/',
     storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.babonnaeim',
