@@ -3335,6 +3335,11 @@ h2 {
   line-height: 1.22;
 }
 
+:root[dir='rtl'] #contact .eyebrow {
+  justify-self: end;
+  text-align: right;
+}
+
 :root[dir='rtl'] #contact .contact-methods {
   justify-items: start;
   margin-top: 22px;
