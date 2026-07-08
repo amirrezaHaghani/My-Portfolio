@@ -148,6 +148,16 @@ body {
   grid-row: 1;
 }
 
+:root[dir='rtl'] #contact > .section-heading {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+:root[dir='rtl'] #contact > .contact-form {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 :root[dir='rtl'] .scroll-progress,
 :root[dir='rtl'] .hud-track i {
   transform-origin: right center;
@@ -3339,7 +3349,9 @@ h2 {
   }
 
   :root[dir='rtl'] #about > .section-heading,
-  :root[dir='rtl'] #about > .glass-panel {
+  :root[dir='rtl'] #about > .glass-panel,
+  :root[dir='rtl'] #contact > .section-heading,
+  :root[dir='rtl'] #contact > .contact-form {
     grid-column: auto;
     grid-row: auto;
   }
