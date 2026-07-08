@@ -3434,6 +3434,19 @@ h2 {
   max-width: min(760px, 100%);
 }
 
+:root[dir='rtl'] .section-heading.centered,
+:root[dir='rtl'] .section-heading.centered h2,
+:root[dir='rtl'] .section-heading.centered > p:not(.eyebrow) {
+  justify-items: end;
+  text-align: right;
+}
+
+:root[dir='rtl'] .section-heading.centered > *,
+:root[dir='rtl'] .section-heading.centered .eyebrow {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
 @media (max-width: 900px) {
   body::before,
   body::after {
