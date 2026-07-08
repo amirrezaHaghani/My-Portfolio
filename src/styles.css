@@ -3497,19 +3497,59 @@ h2 {
     display: none;
   }
 
-  .mesh {
-    width: 28rem;
-    filter: blur(44px);
-    opacity: 0.22;
+  .motion-curtain,
+  .section-transition-line,
+  .achievement-toast,
+  .gamification-hud {
+    display: none;
   }
 
-  .energy-lane:nth-of-type(n + 6),
-  .particle:nth-of-type(n + 18) {
+  .mesh {
+    width: 22rem;
+    filter: blur(24px);
+    opacity: 0.12;
+  }
+
+  .mesh-c,
+  .energy-lane:nth-of-type(n + 3),
+  .particle:nth-of-type(n + 6) {
     display: none;
   }
 
   .cursor-glow {
     display: none;
+  }
+
+  .animated-bg,
+  .animated-bg::before,
+  .mesh,
+  .energy-lane,
+  .particle,
+  .portrait-ring::before,
+  .timeline::before,
+  .timeline-dot,
+  .contact-command-panel::before,
+  .contact-orbit-one,
+  .contact-orbit-two,
+  .form-energy-ring,
+  .form-energy-ring::after {
+    animation: none !important;
+  }
+
+  .site-nav,
+  .metric-strip div,
+  .glass-panel,
+  .skill-card,
+  .timeline-card,
+  .project-card,
+  .contact-command-panel,
+  .contact-form,
+  .signal-card,
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .icon-button {
+    backdrop-filter: none;
   }
 
   .desktop-links,
@@ -3593,12 +3633,12 @@ h2 {
 
 @media (max-width: 640px) {
   .animated-bg::before {
-    opacity: 0.42;
+    opacity: 0.24;
   }
 
-  .mesh-c,
-  .energy-lane:nth-of-type(n + 5),
-  .particle:nth-of-type(n + 14) {
+  .mesh,
+  .energy-lane:nth-of-type(n + 2),
+  .particle:nth-of-type(n + 4) {
     display: none;
   }
 
