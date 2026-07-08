@@ -3125,6 +3125,11 @@ h2 {
   margin-inline: auto;
 }
 
+:root[dir='rtl'] .section-heading:not(.centered) .eyebrow {
+  justify-self: end;
+  text-align: right;
+}
+
 .skills-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
