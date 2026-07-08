@@ -3374,7 +3374,8 @@ h2 {
 
 :root[dir='rtl'] .section-heading:not(.centered) h2,
 :root[dir='rtl'] .section-heading:not(.centered) > p:not(.eyebrow) {
-  margin-inline-start: auto;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
 }
 
 #experience .section-heading h2 {
@@ -3476,8 +3477,8 @@ h2 {
   justify-self: end;
   margin-left: auto;
   margin-right: 0;
-  margin-inline-start: auto;
-  margin-inline-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
 }
 
 @media (max-width: 900px) {
