@@ -3437,12 +3437,16 @@ h2 {
 :root[dir='rtl'] .section-heading.centered,
 :root[dir='rtl'] .section-heading.centered h2,
 :root[dir='rtl'] .section-heading.centered > p:not(.eyebrow) {
+  direction: rtl;
   justify-items: end;
   text-align: right;
 }
 
 :root[dir='rtl'] .section-heading.centered > *,
 :root[dir='rtl'] .section-heading.centered .eyebrow {
+  justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
   margin-inline-start: auto;
   margin-inline-end: 0;
 }
