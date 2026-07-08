@@ -65,6 +65,13 @@ body {
   letter-spacing: 0;
 }
 
+:root[dir='rtl'] h1,
+:root[dir='rtl'] h2,
+:root[dir='rtl'] .section-heading h2 {
+  overflow: visible;
+  padding-block: 0.05em 0.12em;
+}
+
 :root[dir='rtl'] .section-heading,
 :root[dir='rtl'] .hero-copy,
 :root[dir='rtl'] .glass-panel,
@@ -164,6 +171,10 @@ body {
 :root[dir='rtl'] .mobile-panel button {
   justify-content: flex-start;
   text-align: right;
+}
+
+:root[dir='rtl'] .hero-actions {
+  justify-content: flex-end;
 }
 
 a {
@@ -2838,6 +2849,18 @@ body::after {
   transform-origin: right bottom;
 }
 
+:root[dir='rtl'] body::before {
+  right: max(14px, calc((100vw - 1280px) / 2));
+  left: auto;
+}
+
+:root[dir='rtl'] body::after {
+  right: auto;
+  left: max(16px, calc((100vw - 1280px) / 2));
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+}
+
 .animated-bg {
   opacity: 0.42;
   mix-blend-mode: screen;
@@ -3062,8 +3085,12 @@ h2 {
 }
 
 :root[dir='rtl'] .section-heading.centered {
-  justify-items: end;
-  text-align: right;
+  justify-items: center;
+  text-align: center;
+}
+
+:root[dir='rtl'] .section-heading.centered > * {
+  margin-inline: auto;
 }
 
 .skills-grid {
@@ -3081,12 +3108,26 @@ h2 {
   min-height: 440px;
 }
 
+:root[dir='rtl'] .project-card {
+  direction: ltr;
+}
+
+:root[dir='rtl'] .project-body {
+  direction: rtl;
+  text-align: right;
+}
+
 .project-card:nth-child(even) .project-shot {
   order: 2;
 }
 
 .project-card:nth-child(even) .project-body {
   order: 1;
+}
+
+:root[dir='rtl'] .project-card:nth-child(even) .project-shot,
+:root[dir='rtl'] .project-card:nth-child(even) .project-body {
+  order: initial;
 }
 
 .project-shot {
@@ -3113,6 +3154,8 @@ h2 {
   font-size: clamp(0.72rem, 1vw, 0.88rem);
   font-weight: 800;
   pointer-events: none;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 :root[dir='rtl'] .project-body::after {
@@ -3130,6 +3173,10 @@ h2 {
   color: var(--mint);
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
   font-size: 0.6em;
+}
+
+:root[dir='rtl'] .project-body h3::before {
+  content: '';
 }
 
 .project-card:hover .project-body h3 {
@@ -3158,6 +3205,12 @@ h2 {
   color: rgba(78, 202, 255, 0.72);
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
   margin-inline-start: 2px;
+}
+
+:root[dir='rtl'] .skill-chip,
+:root[dir='rtl'] .tech-stack em {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .filter-bar button.active,
