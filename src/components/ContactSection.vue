@@ -26,6 +26,19 @@ const contactLabels = computed(() =>
         chips: ['Product delivery', 'Architecture advisory', 'Android team lead'],
       },
 );
+const contactCommandLines = computed(() =>
+  isFa.value
+    ? [
+        '$ ./start-collaboration',
+        '> scope = "android_product"',
+        '> reply_window = "same_day"',
+      ]
+    : [
+        '$ ./start-collaboration',
+        '> scope = "android_product"',
+        '> reply_window = "same_day"',
+      ],
+);
 
 function handleSubmit() {
   status.value = isFa.value ? fa.contact.status : 'Thanks. Your message draft is ready in your email client.';
@@ -89,6 +102,10 @@ async function copyToClipboard(value: string, key: 'email' | 'phone') {
             <strong>{{ contactLabels.availability }}</strong>
             <span>{{ contactLabels.response }}</span>
           </div>
+        </div>
+
+        <div class="contact-cli" aria-label="Command line status">
+          <code v-for="line in contactCommandLines" :key="line" class="code-line">{{ line }}</code>
         </div>
 
         <div class="contact-quick-actions">

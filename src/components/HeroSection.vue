@@ -10,6 +10,21 @@ const ui = useUiStore();
 const { locale } = storeToRefs(ui);
 const isFa = computed(() => locale.value === 'fa');
 const displayedMetrics = computed(() => (isFa.value ? fa.metrics : metrics));
+const heroCodeLines = computed(() =>
+  isFa.value
+    ? [
+        'fun shipReliableAndroid() {',
+        '  stack = [Kotlin, Compose, MVVM]',
+        '  focus = "release_quality"',
+        '}',
+      ]
+    : [
+        'fun shipReliableAndroid() {',
+        '  stack = [Kotlin, Compose, MVVM]',
+        '  focus = "release_quality"',
+        '}',
+      ],
+);
 </script>
 
 <template>
@@ -19,6 +34,17 @@ const displayedMetrics = computed(() => (isFa.value ? fa.metrics : metrics));
       <h1>{{ isFa ? fa.hero.name : profile.name }}</h1>
       <p class="hero-role">{{ isFa ? fa.hero.role : profile.role }}</p>
       <p class="hero-tagline">{{ isFa ? fa.hero.tagline : profile.tagline }}</p>
+      <div class="hero-code-block reveal" aria-label="Engineering snapshot">
+        <div class="code-panel-header">
+          <span class="code-dots" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+          <strong>android_profile.kt</strong>
+        </div>
+        <code v-for="line in heroCodeLines" :key="line" class="code-line">{{ line }}</code>
+      </div>
 
       <div class="hero-actions">
         <a class="primary-button" href="#projects">

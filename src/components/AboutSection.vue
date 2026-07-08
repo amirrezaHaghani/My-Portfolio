@@ -9,6 +9,19 @@ import { useUiStore } from '../stores/ui';
 const ui = useUiStore();
 const { locale } = storeToRefs(ui);
 const isFa = computed(() => locale.value === 'fa');
+const aboutCodeLines = computed(() =>
+  isFa.value
+    ? [
+        'val experienceYears = 8',
+        'val path = listOf("Freelance", "Startup", "Product Teams")',
+        'val mindset = "keep_it_readable"',
+      ]
+    : [
+        'val experienceYears = 8',
+        'val path = listOf("Freelance", "Startup", "Product Teams")',
+        'val mindset = "keep_it_readable"',
+      ],
+);
 </script>
 
 <template>
@@ -39,6 +52,17 @@ const isFa = computed(() => locale.value === 'fa');
           release quality through clear architecture and practical collaboration.
         </p>
       </template>
+      <div class="inline-code-panel" aria-label="Engineer summary">
+        <div class="code-panel-header">
+          <span class="code-dots" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+          <strong>about_me.kt</strong>
+        </div>
+        <code v-for="line in aboutCodeLines" :key="line" class="code-line">{{ line }}</code>
+      </div>
       <div class="location-pill">
         <MapPin :size="17" aria-hidden="true" />
         {{ isFa ? fa.about.location : profile.location }}
