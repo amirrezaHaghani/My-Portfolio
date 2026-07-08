@@ -3255,6 +3255,34 @@ h2 {
   color: #f6fbff;
 }
 
+:root[dir='rtl'] .section-heading:not(.centered) {
+  display: grid;
+  justify-items: end;
+}
+
+:root[dir='rtl'] .section-heading h2 {
+  max-width: min(820px, 100%);
+  overflow: visible;
+  padding-block: 0.08em 0.14em;
+  font-size: clamp(2.15rem, 4.9vw, 4.7rem);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+:root[dir='rtl'] .section-heading:not(.centered) h2,
+:root[dir='rtl'] .section-heading:not(.centered) > p:not(.eyebrow) {
+  margin-inline-start: auto;
+}
+
+:root[dir='rtl'] #experience .section-heading h2 {
+  max-width: min(760px, 100%);
+  font-size: clamp(2.05rem, 4.4vw, 4.25rem);
+}
+
+:root[dir='rtl'] #experience .timeline {
+  margin-top: 34px;
+}
+
 @media (max-width: 900px) {
   body::before,
   body::after {
