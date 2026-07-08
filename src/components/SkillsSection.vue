@@ -85,12 +85,6 @@ const skillGroups = computed(() => {
     ...(isFa.value ? fa.skills.groups[name] : skillDetails[name]),
   }));
 });
-
-const skillSnippet = (group: { name: SkillGroup; focus: string }) => [
-  `interface ${group.name}Module {`,
-  `  val focus: String = "${group.focus.toLowerCase().replace(/\s+/g, '_')}"`,
-  '}',
-];
 </script>
 
 <template>
@@ -114,10 +108,6 @@ const skillSnippet = (group: { name: SkillGroup; focus: string }) => [
           <span class="skill-focus">{{ group.focus }}</span>
           <h3>{{ group.name }}</h3>
           <p>{{ group.summary }}</p>
-        </div>
-
-        <div class="skill-code-block" :aria-label="`${group.name} code profile`">
-          <code v-for="line in skillSnippet(group)" :key="line" class="code-line">{{ line }}</code>
         </div>
 
         <ul class="skill-proof-list" :aria-label="`${group.name} proof points`">
