@@ -3386,6 +3386,54 @@ h2 {
   justify-content: flex-start;
 }
 
+/* Unified section heading system */
+.section-shell:not(.hero-section) {
+  padding-top: clamp(88px, 8vw, 124px);
+}
+
+.section-shell:not(.hero-section)::after {
+  position: absolute;
+  top: clamp(38px, 4vw, 54px);
+  inset-inline: 0;
+  height: 1px;
+  content: '';
+  background: linear-gradient(90deg, transparent, rgba(229, 240, 252, 0.12), rgba(61, 220, 132, 0.22), transparent);
+  pointer-events: none;
+}
+
+.section-heading,
+.section-heading.centered {
+  display: grid;
+  justify-items: start;
+  text-align: start;
+}
+
+.section-heading.centered > *,
+:root[dir='rtl'] .section-heading.centered > * {
+  margin-inline: 0;
+}
+
+.section-heading .eyebrow,
+.section-heading.centered .eyebrow,
+:root[dir='rtl'] .section-heading .eyebrow,
+:root[dir='rtl'] .section-heading.centered .eyebrow,
+:root[dir='rtl'] .section-heading:not(.centered) .eyebrow,
+:root[dir='rtl'] #contact .eyebrow {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.section-heading h2,
+.section-heading.centered h2 {
+  max-width: min(900px, 100%);
+}
+
+.section-heading.centered > p:not(.eyebrow) {
+  max-width: min(760px, 100%);
+}
+
 @media (max-width: 900px) {
   body::before,
   body::after {
