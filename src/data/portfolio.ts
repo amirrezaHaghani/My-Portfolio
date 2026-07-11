@@ -1,4 +1,7 @@
 import portraitUrl from '../assets/amirreza-portrait-optimized.jpg';
+import pardeAbiHomeShot from '../assets/projects/pardeabi-home-user.png';
+import pardeAbiCategoriesShot from '../assets/projects/pardeabi-categories-user.png';
+import pardeAbiKidsShot from '../assets/projects/pardeabi-kids-user.png';
 
 export type Skill = {
   name: string;
@@ -168,14 +171,13 @@ export const projects: Project[] = [
       'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
     accent: '#8fb9c9',
     technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
-    imageUrl: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
-    imageAlt: 'Parde Abi VOD mobile screenshots from Myket',
-    preview: 'phone-stack',
-    phoneImages: [
-      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
-      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb8c3e87-3269-4f6b-961c-9fa64da57af2.png',
-      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb22f592-7904-4b62-9934-296ce2a0b60a.png',
-    ],
+    imageUrl: pardeAbiHomeShot,
+    imageAlt: 'Parde Abi website previews',
+    preview: 'pardeabi-tv',
+    previewImages: {
+      home: pardeAbiHomeShot,
+      movies: [pardeAbiCategoriesShot, pardeAbiKidsShot],
+    },
     stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
     websiteUrl: 'https://pardeabi.ir/',
     storeLinks: [

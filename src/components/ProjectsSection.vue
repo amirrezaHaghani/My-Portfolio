@@ -101,22 +101,26 @@ const setProjectFilter = (filter: ProjectFilter) => {
             <figure class="tv-device tv-device-secondary">
               <div class="tv-screen movie-screen">
                 <img
-                  v-if="project.previewImages.detail"
+                  v-if="project.previewImages.detail || project.previewImages.movies[0]"
                   class="tv-screen-detail"
-                  :src="project.previewImages.detail"
-                  alt="Parde Abi content browsing preview"
+                  :src="project.previewImages.detail ?? project.previewImages.movies[0]"
+                  alt="Parde Abi categories preview"
                   loading="lazy"
                 />
-                <div v-else class="movie-rail">
-                  <img
-                    v-for="movie in project.previewImages.movies"
-                    :key="movie"
-                    :src="movie"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-                <span>{{ isFa ? fa.projects.links.movies : 'Movies' }}</span>
+                <span>{{ isFa ? 'دسته‌بندی' : 'Categories' }}</span>
+              </div>
+              <i aria-hidden="true"></i>
+            </figure>
+
+            <figure v-if="project.previewImages.movies[1]" class="tv-device tv-device-tertiary">
+              <div class="tv-screen movie-screen">
+                <img
+                  class="tv-screen-detail"
+                  :src="project.previewImages.movies[1]"
+                  alt="Parde Abi kids preview"
+                  loading="lazy"
+                />
+                <span>{{ isFa ? 'کودک' : 'Kids' }}</span>
               </div>
               <i aria-hidden="true"></i>
             </figure>
@@ -128,7 +132,6 @@ const setProjectFilter = (filter: ProjectFilter) => {
               class="phone-device"
               :class="`phone-device-${index + 1}`"
             >
-              <span aria-hidden="true"></span>
               <img :src="screen" :alt="`${project.title} store screenshot ${index + 1}`" loading="lazy" />
             </figure>
           </div>

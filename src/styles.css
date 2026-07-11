@@ -1772,6 +1772,13 @@ h3 {
   transform: rotate(5deg) scale(0.94);
 }
 
+.tv-device-tertiary {
+  left: 50%;
+  top: 42%;
+  z-index: 3;
+  transform: translateX(-50%) scale(0.9);
+}
+
 .tv-screen {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -1853,6 +1860,10 @@ h3 {
   transform: translateY(5px) rotate(4deg) scale(0.94);
 }
 
+.project-card:hover .tv-device-tertiary {
+  transform: translateX(-50%) translateY(-6px) scale(0.92);
+}
+
 .project-card:hover .tv-device {
   border-color: color-mix(in srgb, var(--accent), white 20%);
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease;
@@ -1883,75 +1894,52 @@ h3 {
 
 .phone-device {
   position: absolute;
-  width: 31%;
+  width: 34%;
   min-width: 112px;
-  max-width: 150px;
+  max-width: 178px;
   margin: 0;
-  padding: 7px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04)),
-    #06090e;
-  box-shadow: 0 26px 62px rgba(0, 0, 0, 0.38);
-  transition: transform 440ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease;
-}
-
-.phone-device span {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  z-index: 2;
-  width: 34px;
-  height: 5px;
-  border-radius: 999px;
-  background: rgba(8, 11, 17, 0.72);
-  transform: translateX(-50%);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+  transition: transform 440ms cubic-bezier(0.22, 1, 0.36, 1), filter 220ms ease;
 }
 
 .phone-device img {
   display: block;
-  aspect-ratio: 9 / 19.5;
   width: 100%;
   height: auto;
-  border-radius: 14px;
-  object-fit: cover;
+  border-radius: 18px;
+  object-fit: contain;
   object-position: top center;
 }
 
 .phone-device::after {
-  position: absolute;
-  inset: 7px;
-  content: '';
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 32%),
-    radial-gradient(circle at 26% 10%, rgba(255, 255, 255, 0.16), transparent 24%);
-  pointer-events: none;
+  content: none;
 }
 
 .phone-device-1 {
-  left: 9%;
-  top: 28px;
-  transform: rotate(-8deg) scale(0.93);
+  left: 8%;
+  top: 30px;
+  transform: rotate(-8deg) scale(0.9);
 }
 
 .phone-device-2 {
   left: 50%;
   top: 10px;
   z-index: 2;
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) scale(1.03);
 }
 
 .phone-device-3 {
-  right: 9%;
+  right: 8%;
   top: 34px;
-  transform: rotate(8deg) scale(0.92);
+  transform: rotate(8deg) scale(0.9);
 }
 
 .project-card:hover .phone-device {
-  border-color: color-mix(in srgb, var(--accent), white 22%);
+  filter: drop-shadow(0 0 20px color-mix(in srgb, var(--accent), transparent 78%));
 }
 
 .project-card:hover .phone-device-1 {
@@ -3261,12 +3249,22 @@ h2 {
   transform: rotate(4deg) scale(0.86);
 }
 
+.tv-device-tertiary {
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%) scale(0.82);
+}
+
 .project-card:hover .tv-device-primary {
   transform: translateY(-4px) rotate(-4deg) scale(0.92);
 }
 
 .project-card:hover .tv-device-secondary {
   transform: translateY(4px) rotate(4deg) scale(0.86);
+}
+
+.project-card:hover .tv-device-tertiary {
+  transform: translateX(-50%) translateY(-4px) scale(0.84);
 }
 
 .project-body {
