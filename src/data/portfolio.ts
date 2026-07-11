@@ -168,18 +168,14 @@ export const projects: Project[] = [
       'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
     accent: '#8fb9c9',
     technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
-    imageUrl: 'https://pardeabi.ir/_nuxt/home-banner.D1rlQDMZ.webp',
-    imageAlt: 'Parde Abi VOD Android TV and mobile preview',
-    preview: 'pardeabi-tv',
-    previewImages: {
-      home: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
-      detail: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb8c3e87-3269-4f6b-961c-9fa64da57af2.png',
-      movies: [
-        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb22f592-7904-4b62-9934-296ce2a0b60a.png',
-        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/a569038d-611c-47f5-96f0-5ac1548fb7eb.png',
-        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/48c89135-1ce3-4a99-9158-9a8972816e16.png',
-      ],
-    },
+    imageUrl: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
+    imageAlt: 'Parde Abi VOD mobile screenshots from Myket',
+    preview: 'phone-stack',
+    phoneImages: [
+      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
+      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb8c3e87-3269-4f6b-961c-9fa64da57af2.png',
+      'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb22f592-7904-4b62-9934-296ce2a0b60a.png',
+    ],
     stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],
     websiteUrl: 'https://pardeabi.ir/',
     storeLinks: [
