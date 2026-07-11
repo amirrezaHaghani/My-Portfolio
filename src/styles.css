@@ -3132,7 +3132,8 @@ h2 {
 }
 
 .signal-card {
-  transform: translateY(-24px);
+  margin-top: 6px;
+  transform: none;
 }
 
 .section-heading.centered {
