@@ -27,6 +27,7 @@ export type Project = {
   preview?: 'pardeabi-tv' | 'phone-stack';
   previewImages?: {
     home: string;
+    detail?: string;
     movies: string[];
   };
   phoneImages?: string[];
@@ -171,14 +172,12 @@ export const projects: Project[] = [
     imageAlt: 'Parde Abi VOD Android TV and mobile preview',
     preview: 'pardeabi-tv',
     previewImages: {
-      home: 'https://pardeabi.ir/_nuxt/home-banner.D1rlQDMZ.webp',
+      home: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/6b345785-d367-4795-9ea4-5e02ae474564.png',
+      detail: 'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb8c3e87-3269-4f6b-961c-9fa64da57af2.png',
       movies: [
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/15798-obsession.jpg',
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27086-the-get-out.jpg',
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27073-heavenly-ever-after.jpg',
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27052-deep-water.jpg',
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27041-infiltrate.jpg',
-        'https://cdn.pardeabi.ir/pardeabi/poster/upera/27025-vengeance.jpg',
+        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/cb22f592-7904-4b62-9934-296ce2a0b60a.png',
+        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/a569038d-611c-47f5-96f0-5ac1548fb7eb.png',
+        'https://myket.ir/asset-files/screenshots/xlarge/com.pardeabi.vod/48c89135-1ce3-4a99-9158-9a8972816e16.png',
       ],
     },
     stats: ['Android mobile + TV', '10K+ Myket downloads', '4.4 Myket rating'],

@@ -100,7 +100,14 @@ const setProjectFilter = (filter: ProjectFilter) => {
 
             <figure class="tv-device tv-device-secondary">
               <div class="tv-screen movie-screen">
-                <div class="movie-rail">
+                <img
+                  v-if="project.previewImages.detail"
+                  class="tv-screen-detail"
+                  :src="project.previewImages.detail"
+                  alt="Parde Abi content browsing preview"
+                  loading="lazy"
+                />
+                <div v-else class="movie-rail">
                   <img
                     v-for="movie in project.previewImages.movies"
                     :key="movie"
