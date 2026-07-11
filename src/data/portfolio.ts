@@ -23,7 +23,7 @@ export type Project = {
   accent: string;
   imageUrl: string;
   imageAlt: string;
-  imageFocus?: 'left-half';
+  imageFocus?: 'left-half' | 'left-soft';
   preview?: 'pardeabi-tv' | 'phone-stack';
   previewImages?: {
     home: string;
@@ -197,6 +197,7 @@ export const projects: Project[] = [
     accent: '#c9a66b',
     imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
     imageAlt: 'Badesaba calendar app screenshot',
+    imageFocus: 'left-half',
     stats: ['39M Bazaar installs', '4.7 rating', '1300+ Iranian cities'],
     websiteUrl: 'https://badesaba.ir/',
     storeUrl: 'https://cafebazaar.ir/app/com.mobiliha.badesaba',
@@ -256,6 +257,7 @@ export const projects: Project[] = [
     technologies: ['Java', 'Kotlin', 'MVVM', 'API Integration'],
     imageUrl: 'https://vesam24.co/wp-content/uploads/2025/11/bgipad.png',
     imageAlt: 'Vesam educational app platform preview',
+    imageFocus: 'left-soft',
     stats: ['60+ platform features', '160+ education brands', 'Live/offline learning'],
     websiteUrl: 'https://vesam24.co/',
   },
