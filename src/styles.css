@@ -1195,8 +1195,8 @@ h3 {
 .portrait-ring {
   position: relative;
   display: grid;
-  width: min(100%, 480px);
-  aspect-ratio: 1;
+  width: min(100%, 430px);
+  aspect-ratio: 4 / 5;
   margin-left: auto;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -1242,6 +1242,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
 }
 
@@ -3071,9 +3072,28 @@ h2 {
 }
 
 .hero-section {
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
-  gap: 70px;
-  padding-top: 104px;
+  grid-template-columns: minmax(420px, 460px) minmax(360px, 520px);
+  justify-content: center;
+  gap: clamp(28px, 3vw, 40px);
+  padding-top: 84px;
+}
+
+.hero-copy {
+  grid-column: 2;
+  align-self: center;
+  max-width: 520px;
+  justify-self: start;
+}
+
+.hero-visual {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  width: min(100%, 384px);
+  justify-self: start;
+  justify-items: stretch;
+  gap: 18px;
+  margin-left: clamp(28px, 3vw, 44px);
 }
 
 .hero-role {
@@ -3125,6 +3145,8 @@ h2 {
   background:
     linear-gradient(145deg, rgba(61, 220, 132, 0.12), rgba(78, 202, 255, 0.08)),
     #060a11;
+  width: 100%;
+  margin: 0;
   box-shadow: 0 34px 110px rgba(0, 0, 0, 0.36);
 }
 
@@ -3133,7 +3155,9 @@ h2 {
 }
 
 .signal-card {
-  margin-top: 6px;
+  width: 100%;
+  margin-top: 0;
+  padding: 20px;
   transform: none;
 }
 
@@ -3628,11 +3652,21 @@ h2 {
     padding-top: 76px;
   }
 
+  .hero-copy,
+  .hero-visual {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .hero-visual {
     min-height: auto;
+    width: min(100%, 430px);
+    justify-self: center;
+    justify-items: stretch;
   }
 
   .portrait-ring {
+    width: 100%;
     margin: 0;
   }
 
@@ -3642,6 +3676,7 @@ h2 {
     bottom: auto;
     width: 100%;
     margin-top: 14px;
+    padding: 18px;
   }
 
   .skills-grid,

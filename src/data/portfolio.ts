@@ -1,4 +1,4 @@
-import portraitUrl from '../assets/amirreza-portrait-optimized.jpg';
+import portraitUrl from '../assets/amirreza-portrait-new.png';
 import pardeAbiHomeShot from '../assets/projects/pardeabi-home-user.jpg';
 import pardeAbiCategoriesShot from '../assets/projects/pardeabi-categories-user.jpg';
 import pardeAbiKidsShot from '../assets/projects/pardeabi-kids-user.jpg';
