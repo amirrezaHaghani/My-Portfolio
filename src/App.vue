@@ -59,77 +59,78 @@ onMounted(() => {
     );
   });
 
-  gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
-    gsap.fromTo(
-      element,
-      { y: isMobile ? 12 : 18, opacity: isMobile ? 0 : 0.82 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: isMobile ? 0.42 : 0.55,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 88%',
-          once: true,
-        },
-      },
-    );
-  });
-
-  gsap.utils.toArray<HTMLElement>('.section-shell').forEach((section) => {
-    const animatedChildren = section.querySelectorAll<HTMLElement>(
-      '.section-heading, .glass-panel, .skill-card, .timeline-item, .project-card, .contact-form, .contact-command-panel',
-    );
-
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 72%',
-      end: 'bottom 28%',
-      onEnter: () => {
-        section.classList.add('section-in-view');
-        if (isMobile) {
-          return;
-        }
-
-        gsap.fromTo(
-          animatedChildren,
-          { y: 18, scale: 0.985, opacity: 0.72 },
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            duration: 0.58,
-            ease: 'power3.out',
-            stagger: 0.045,
-            overwrite: 'auto',
-          },
-        );
-      },
-      onEnterBack: () => {
-        section.classList.add('section-in-view');
-        if (isMobile) {
-          return;
-        }
-
-        gsap.fromTo(
-          animatedChildren,
-          { y: -12, scale: 0.992, opacity: 0.78 },
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            duration: 0.46,
-            ease: 'power2.out',
-            stagger: 0.035,
-            overwrite: 'auto',
-          },
-        );
-      },
-      onLeave: () => section.classList.remove('section-in-view'),
-      onLeaveBack: () => section.classList.remove('section-in-view'),
+  if (isMobile) {
+    gsap.set('.reveal', { y: 0, opacity: 1, clearProps: 'transform' });
+    document.querySelectorAll<HTMLElement>('.section-shell').forEach((section) => {
+      section.classList.add('section-in-view');
     });
-  });
+  } else {
+    gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
+      gsap.fromTo(
+        element,
+        { y: 18, opacity: 0.82 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.55,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 88%',
+            once: true,
+          },
+        },
+      );
+    });
+
+    gsap.utils.toArray<HTMLElement>('.section-shell').forEach((section) => {
+      const animatedChildren = section.querySelectorAll<HTMLElement>(
+        '.section-heading, .glass-panel, .skill-card, .timeline-item, .project-card, .contact-form, .contact-command-panel',
+      );
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 72%',
+        end: 'bottom 28%',
+        onEnter: () => {
+          section.classList.add('section-in-view');
+
+          gsap.fromTo(
+            animatedChildren,
+            { y: 18, scale: 0.985, opacity: 0.72 },
+            {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 0.58,
+              ease: 'power3.out',
+              stagger: 0.045,
+              overwrite: 'auto',
+            },
+          );
+        },
+        onEnterBack: () => {
+          section.classList.add('section-in-view');
+
+          gsap.fromTo(
+            animatedChildren,
+            { y: -12, scale: 0.992, opacity: 0.78 },
+            {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 0.46,
+              ease: 'power2.out',
+              stagger: 0.035,
+              overwrite: 'auto',
+            },
+          );
+        },
+        onLeave: () => section.classList.remove('section-in-view'),
+        onLeaveBack: () => section.classList.remove('section-in-view'),
+      });
+    });
+  }
 
   if (allowAmbientLoops) {
     gsap.to('.hero-copy h1', {

@@ -43,7 +43,15 @@ const setProjectFilter = (filter: ProjectFilter) => {
   ui.setFilter(filter);
 
   void nextTick(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 900px)').matches;
+
+    if (reduceMotion) {
+      return;
+    }
+
+    if (isMobile) {
+      ScrollTrigger.refresh();
       return;
     }
 
@@ -92,7 +100,12 @@ const setProjectFilter = (filter: ProjectFilter) => {
           <div v-if="project.preview === 'pardeabi-tv' && project.previewImages" class="pardeabi-tv-preview">
             <figure class="tv-device tv-device-primary">
               <div class="tv-screen">
-                <img :src="project.previewImages.home" alt="Parde Abi home screen preview" loading="lazy" />
+                <img
+                  :src="project.previewImages.home"
+                  alt="Parde Abi home screen preview"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span>{{ isFa ? fa.projects.links.home : 'Home' }}</span>
               </div>
               <i aria-hidden="true"></i>
@@ -106,6 +119,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
                   :src="project.previewImages.detail ?? project.previewImages.movies[0]"
                   alt="Parde Abi categories preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span>{{ isFa ? 'دسته‌بندی' : 'Categories' }}</span>
               </div>
@@ -119,6 +133,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
                   :src="project.previewImages.movies[1]"
                   alt="Parde Abi kids preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span>{{ isFa ? 'کودک' : 'Kids' }}</span>
               </div>
@@ -132,7 +147,12 @@ const setProjectFilter = (filter: ProjectFilter) => {
               class="phone-device"
               :class="`phone-device-${index + 1}`"
             >
-              <img :src="screen" :alt="`${project.title} store screenshot ${index + 1}`" loading="lazy" />
+              <img
+                :src="screen"
+                :alt="`${project.title} store screenshot ${index + 1}`"
+                loading="lazy"
+                decoding="async"
+              />
             </figure>
           </div>
           <img
@@ -141,6 +161,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
             :src="project.imageUrl"
             :alt="project.imageAlt"
             loading="lazy"
+            decoding="async"
           />
           <div class="project-shot-overlay" aria-hidden="true"></div>
         </div>

@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -1772,6 +1773,11 @@ h3 {
   transform: rotate(5deg) scale(0.94);
 }
 
+#app {
+  width: 100%;
+  overflow-x: clip;
+}
+
 .tv-device-tertiary {
   left: 50%;
   top: 42%;
@@ -3508,6 +3514,13 @@ h2 {
 }
 
 @media (max-width: 900px) {
+  html,
+  body,
+  #app {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   body::before,
   body::after {
     display: none;
@@ -3516,7 +3529,10 @@ h2 {
   .motion-curtain,
   .section-transition-line,
   .achievement-toast,
-  .gamification-hud {
+  .gamification-hud,
+  .contact-orbit-one,
+  .contact-orbit-two,
+  .form-energy-ring {
     display: none;
   }
 
@@ -3582,6 +3598,7 @@ h2 {
   .two-column,
   .contact-layout {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
   :root[dir='rtl'] #about > .section-heading,
@@ -3630,11 +3647,26 @@ h2 {
   .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
   .project-card {
     grid-template-columns: 1fr;
     min-height: auto;
+    max-width: 100%;
+    overflow: clip;
+    clip-path: inset(0 round 8px);
+    transform: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+    clip-path: inset(0 round 8px);
+  }
+
+  .project-card:hover .project-shot img,
+  .project-card:hover .pardeabi-tv-preview img {
+    transform: scale(1.01);
   }
 
   .project-card:nth-child(even) .project-shot,
@@ -3644,6 +3676,28 @@ h2 {
 
   .project-shot {
     min-height: 280px;
+    max-width: 100%;
+    overflow: clip;
+    contain: paint;
+  }
+
+  .pardeabi-tv-preview,
+  .phone-stack-preview {
+    max-width: 100%;
+    overflow: clip;
+  }
+
+  .tv-device {
+    width: min(58%, 300px);
+    max-width: calc(100% - 28px);
+  }
+
+  .tv-device-primary {
+    left: 4%;
+  }
+
+  .tv-device-secondary {
+    right: 4%;
   }
 }
 
@@ -3660,11 +3714,13 @@ h2 {
 
   .section-shell {
     width: min(100% - 24px, 1120px);
+    max-width: calc(100vw - 24px);
     padding: 70px 0;
   }
 
   .site-nav {
     width: calc(100% - 24px);
+    max-width: calc(100vw - 24px);
     height: 66px;
     margin-top: 12px;
   }
@@ -3674,7 +3730,19 @@ h2 {
   }
 
   h2 {
-    font-size: clamp(2rem, 12vw, 3rem);
+    font-size: clamp(1.95rem, 11vw, 2.8rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-copy,
+  .section-heading,
+  .project-body,
+  .glass-panel,
+  .skill-card,
+  .timeline-card,
+  .contact-form {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .metric-strip {
@@ -3720,6 +3788,27 @@ h2 {
   .achievement-toast {
     right: 14px;
     bottom: 62px;
+  }
+
+  .tv-device {
+    width: min(62%, 238px);
+  }
+
+  .tv-device-primary {
+    left: 2%;
+    top: 28%;
+    transform: rotate(-4deg) scale(0.9);
+  }
+
+  .tv-device-secondary {
+    right: 2%;
+    top: 18%;
+    transform: rotate(4deg) scale(0.84);
+  }
+
+  .tv-device-tertiary {
+    top: 48%;
+    transform: translateX(-50%) scale(0.78);
   }
 
 }

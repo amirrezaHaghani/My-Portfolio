@@ -1,7 +1,7 @@
 import portraitUrl from '../assets/amirreza-portrait-optimized.jpg';
-import pardeAbiHomeShot from '../assets/projects/pardeabi-home-user.png';
-import pardeAbiCategoriesShot from '../assets/projects/pardeabi-categories-user.png';
-import pardeAbiKidsShot from '../assets/projects/pardeabi-kids-user.png';
+import pardeAbiHomeShot from '../assets/projects/pardeabi-home-user.jpg';
+import pardeAbiCategoriesShot from '../assets/projects/pardeabi-categories-user.jpg';
+import pardeAbiKidsShot from '../assets/projects/pardeabi-kids-user.jpg';
 
 export type Skill = {
   name: string;
