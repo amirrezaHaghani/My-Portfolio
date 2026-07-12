@@ -50,7 +50,7 @@ export const profile = {
   email: 'amirrezahaghani96@gmail.com',
   phone: '+989352761079',
   tagline:
-    'I build and modernize native Android products with Kotlin, clean architecture, and the release discipline expected from large-scale production apps.',
+    'I build and modernize native Android products with Kotlin, clean architecture, and the release discipline needed for production apps at scale.',
   portraitUrl,
   socials: [
     { label: 'Email', href: 'mailto:amirrezahaghani96@gmail.com' },
@@ -61,8 +61,8 @@ export const profile = {
 
 export const metrics = [
   { value: '8+', label: 'Years building native Android products' },
-  { value: '50M+', label: 'Installs represented across shipped products' },
-  { value: '4', label: 'Freelance, startup, and product team chapters' },
+  { value: '50M+', label: 'Installs across products I have worked on' },
+  { value: '4', label: 'Freelance, startup, and product-team chapters' },
 ];
 
 export const skills: Skill[] = [
@@ -104,12 +104,12 @@ export const experiences: Experience[] = [
     role: 'Senior Android Developer / Team Lead',
     period: 'Jun 2021 - Present',
     summary:
-      'Owning and modernizing large-scale native Android products across the BadeSaba ecosystem, including Parde Abi VOD, with team lead responsibility since 2024 and a focus on reliability, performance, and maintainable feature delivery.',
+      'Developing, maintaining, and modernizing large-scale native Android products across the BadeSaba ecosystem, including Badesaba, Habal Al-Matin, Bab Al-Naim, and Parde Abi VOD. I have also led the Android team since 2024.',
     highlights: [
       'Leading the Android team since 2024, coordinating delivery, code quality, and technical direction.',
-      'Built and maintained Habal Al-Matin, Bab Al-Naim, Badesaba, and Parde Abi Android products at national scale.',
-      'Refactored aging codebases to reduce risk, improve readability, and make feature delivery steadier.',
-      'Created technical documentation for new engineers and helped standardize practical engineering habits.',
+      'Built and maintained several high-traffic Android products at national scale.',
+      'Refactored aging codebases to reduce risk, improve readability, and make delivery steadier.',
+      'Created technical documentation for new engineers and helped standardize team practices.',
       'Partnered with engineering teammates on architecture decisions, performance work, and release quality.',
     ],
   },
@@ -118,10 +118,10 @@ export const experiences: Experience[] = [
     role: 'Android Software Engineer',
     period: 'Aug 2020 - Jun 2021',
     summary:
-      'Delivered Android features for a healthcare product where analytics, experimentation, and release discipline shaped engineering priorities.',
+      'Delivered Android features for a patient-facing telemedicine product, with a focus on user experience, realtime communication, and release quality.',
     highlights: [
-      'Analyzed production feature behavior using analytics and experiment feedback.',
       'Built, released, and maintained production Kotlin code for patient-facing mobile flows.',
+      'Worked on consultation, realtime communication, and medical file-sharing experiences.',
       'Applied MVVM and clean architecture to keep healthcare features testable and easier to evolve.',
       'Worked with product and engineering teammates to turn user signals into shipped product improvements.',
     ],
@@ -131,7 +131,7 @@ export const experiences: Experience[] = [
     role: 'Android Software Engineer',
     period: 'Aug 2019 - Aug 2020',
     summary:
-      'Developed native Android applications with Java and Kotlin, translating product UI/UX requirements into reliable mobile features.',
+      'Developed education-focused native Android applications with Java and Kotlin, translating UI/UX, API, and product requirements into reliable mobile features.',
     highlights: [
       'Built Android applications that connected learning workflows, content, and user account features.',
       'Integrated multiple APIs into mobile product flows with attention to error states and data handling.',
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     category: 'Entertainment',
     company: 'Pishgamane Moje Telephone Hamrah (BadeSaba)',
     description:
-      'A family-focused VOD platform for free live streaming, football, movies, and series. I developed the native Android mobile app and Android TV app, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
+      'A family-focused VOD platform for live streaming, football, movies, and series. I developed the native Android mobile and Android TV apps, including playback flows, content discovery, saved items, search/filter experiences, and large-screen viewing patterns.',
     accent: '#8fb9c9',
     technologies: ['Kotlin', 'Android TV', 'Media Playback', 'Search UX'],
     imageUrl: pardeAbiHomeShot,
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     title: 'Badesaba Calendar',
     category: 'Religious',
     description:
-      'A high-traffic Azan and calendar app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
+      'A high-traffic calendar and Azan app with Persian, Hijri, and Gregorian calendars, prayer times, date conversion, weather, Qibla, reminders, live content, payments, and daily services.',
     technologies: ['Kotlin', 'Coroutines', 'Location', 'Notifications'],
     accent: '#c9a66b',
     imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.mobiliha.badesaba-258890932916.jpg',
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     title: 'Habal Al-Matin Quran',
     category: 'Religious',
     description:
-      'A high-scale Quran audio product with recitations from dozens of Qaris, spoken tafsir, translations, Quran search, bookmarks, Tajweed training, and personal or group Khatm planning.',
+      'A large-scale Quran audio product with recitations from dozens of Qaris, spoken tafsir, translations, Quran search, bookmarks, Tajweed training, and personal or group Khatm planning.',
     technologies: ['Kotlin', 'Android SDK', 'Audio Playback', 'Offline Content'],
     accent: '#8fb9c9',
     imageUrl: 'https://statics.myghoran.com/assets/images/intro/habl-600px.webp',
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     title: 'Bab Al-Naim Mafatih',
     category: 'Religious',
     description:
-      'A polished audio Mafatih al-Jinan experience for prayers and Ziarat, with synchronized text, translation, 50 reciters, advanced search, daily/monthly acts, favorites, and group Khatm flows.',
+      'A polished audio Mafatih al-Jinan experience for prayers and Ziarat, with synchronized text, translation, 50 reciters, advanced search, daily and monthly acts, favorites, and group Khatm flows.',
     technologies: ['Kotlin', 'MVVM', 'Search', 'Media Content'],
     accent: '#8bd2bd',
     imageUrl: 'https://mymafatih.com/assets/images/png/header.png',
@@ -230,7 +230,7 @@ export const projects: Project[] = [
     title: 'Hamrah Doctor',
     category: 'Healthcare',
     description:
-      'A patient-facing telemedicine app for online doctor visits, immediate consultation, secure audio/video calls, electronic prescriptions, patient profiles, and sharing ECG samples or medical files.',
+      'A patient-facing telemedicine app for online doctor visits, immediate consultation, secure audio/video calls, electronic prescriptions, patient profiles, and ECG or medical file sharing.',
     technologies: ['Kotlin', 'WebRTC', 'Healthcare UX', 'Analytics'],
     accent: '#a7a0c8',
     imageUrl: 'https://s.cafebazaar.ir/images/upload/screenshot/com.hamrahdoctor.patient-720714151457.jpg',

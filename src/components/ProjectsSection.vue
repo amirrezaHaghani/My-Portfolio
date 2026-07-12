@@ -121,7 +121,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
                   loading="lazy"
                   decoding="async"
                 />
-                <span>{{ isFa ? 'دسته‌بندی' : 'Categories' }}</span>
+                <span>{{ isFa ? fa.projects.links.categories : 'Categories' }}</span>
               </div>
               <i aria-hidden="true"></i>
             </figure>
@@ -135,7 +135,7 @@ const setProjectFilter = (filter: ProjectFilter) => {
                   loading="lazy"
                   decoding="async"
                 />
-                <span>{{ isFa ? 'کودک' : 'Kids' }}</span>
+                <span>{{ isFa ? fa.projects.links.kids : 'Kids' }}</span>
               </div>
               <i aria-hidden="true"></i>
             </figure>

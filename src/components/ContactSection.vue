@@ -65,7 +65,7 @@ async function copyToClipboard(value: string, key: 'email' | 'phone') {
         {{
           isFa
             ? fa.contact.title
-            : "Let's talk about Android products, architecture, and ambitious teams."
+            : "Let's talk about Android products, architecture, and technical leadership."
         }}
       </h2>
       <div class="contact-methods">

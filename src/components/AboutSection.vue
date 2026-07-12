@@ -15,7 +15,7 @@ const isFa = computed(() => locale.value === 'fa');
   <section id="about" class="section-shell two-column">
     <div class="section-heading reveal">
       <p class="eyebrow">{{ isFa ? fa.about.eyebrow : 'About me' }}</p>
-      <h2>{{ isFa ? fa.about.title : 'Building Android products that stay reliable after launch.' }}</h2>
+      <h2>{{ isFa ? fa.about.title : 'Building Android products that stay reliable after release.' }}</h2>
     </div>
 
     <div class="glass-panel reveal">
@@ -28,10 +28,10 @@ const isFa = computed(() => locale.value === 'fa');
       </template>
       <template v-else>
         <p>
-        I am an Android software engineer with 8+ years of experience, starting as a freelancer
-        before moving into startup and product-team environments. My work blends Kotlin depth,
-        clean architecture, production debugging, and the patience to leave systems easier to
-        understand than I found them.
+          I am an Android software engineer with 8+ years of experience, starting as a freelancer
+          before moving into startup and product-team environments. My work blends Kotlin depth,
+          clean architecture, production debugging, and the habit of leaving systems easier to
+          understand than I found them.
         </p>
         <p>
           I am most useful where product expectations are high and the codebase has to keep moving:

@@ -41,7 +41,7 @@ const linkLabel = (link: string) => (isFa.value ? fa.nav.links[link as keyof typ
 
   <nav v-if="isMenuOpen" class="mobile-panel" aria-label="Mobile navigation">
     <a v-for="link in links" :key="link" :href="`#${link}`" @click="ui.closeMenu">{{ linkLabel(link) }}</a>
-    <button type="button" @click="ui.toggleLocale">{{ isFa ? fa.nav.toggle : 'FA' }} / {{ fa.nav.mobileToggle }}</button>
+    <button type="button" @click="ui.toggleLocale">{{ isFa ? fa.nav.toggle : 'FA' }} / {{ isFa ? fa.nav.mobileToggle : 'Switch language' }}</button>
     <a href="/resume.pdf" download @click="ui.closeMenu">{{ isFa ? fa.nav.download : 'Download CV' }}</a>
   </nav>
 </template>

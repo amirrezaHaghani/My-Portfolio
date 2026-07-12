@@ -19,11 +19,11 @@ const skillDetails: Record<
   Android: {
     focus: 'Native product delivery',
     summary:
-      'Building production Android apps with Kotlin, Java, Android SDK, Compose, and classic XML views while keeping screens responsive and release-ready.',
+      'Building production Android apps with Kotlin, Java, Android SDK, Compose, XML views, and Android TV patterns while keeping screens responsive and release-ready.',
     impact: [
       'Own features from UI implementation to API integration and release polish.',
       'Modernize older Java/Kotlin codebases without slowing active product work.',
-      'Build reusable UI patterns for high-traffic consumer applications.',
+      'Build reusable UI patterns for high-traffic consumer products.',
     ],
   },
   Architecture: {
@@ -61,7 +61,7 @@ const skillDetails: Record<
     summary:
       'Leading delivery habits around code review, technical direction, documentation, testing, debugging, and release quality, including Android team lead work since 2024.',
     impact: [
-      'Guide Android delivery decisions for product teams and junior engineers.',
+      'Guide Android delivery decisions for product teams and engineers.',
       'Improve code quality through reviews, shared standards, and documentation.',
       'Coordinate Jira/Git workflows, release checks, and regression prevention.',
     ],
@@ -96,7 +96,7 @@ const skillGroups = computed(() => {
         {{
           isFa
             ? fa.skills.copy
-            : 'A recruiter-friendly view of how I work: deep native Android delivery, architecture discipline, reliable platform engineering, realtime product experience, and team leadership.'
+            : 'A practical view of how I work: native Android delivery, architecture discipline, reliable platform engineering, realtime product experience, and team leadership.'
         }}
       </p>
     </div>

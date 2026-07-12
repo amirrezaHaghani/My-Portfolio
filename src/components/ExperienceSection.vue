@@ -32,7 +32,7 @@ const localizedExperiences = computed(() =>
         {{
           isFa
             ? fa.experience.title
-            : 'From freelance delivery to senior ownership of production Android apps.'
+            : 'From freelance delivery to senior ownership of production Android products.'
         }}
       </h2>
     </div>
