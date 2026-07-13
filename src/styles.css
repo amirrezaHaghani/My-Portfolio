@@ -3062,8 +3062,9 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.25rem, 6.45vw, 5.9rem);
-  line-height: 1.03;
+  max-width: 620px;
+  font-size: clamp(3.1rem, 5.4vw, 5.25rem);
+  line-height: 1.02;
 }
 
 h2 {
@@ -3072,54 +3073,60 @@ h2 {
 }
 
 .hero-section {
-  grid-template-columns: minmax(0, 471px) minmax(0, 576px);
+  grid-template-columns: minmax(340px, 388px) minmax(0, 568px);
   justify-content: start;
-  gap: 44px;
-  padding-top: 72px;
+  gap: clamp(56px, 6vw, 88px);
+  align-items: center;
+  min-height: calc(100vh - var(--nav-height) - 18px);
+  padding-top: 58px;
+  padding-bottom: 64px;
 }
 
 .hero-copy {
   grid-column: 2;
-  align-self: start;
-  max-width: 540px;
+  align-self: center;
+  max-width: 568px;
   justify-self: start;
 }
 
 .hero-visual {
   grid-column: 1;
   grid-row: 1;
-  align-self: start;
-  width: min(100%, 424px);
+  align-self: center;
+  width: min(100%, 388px);
   justify-self: start;
   justify-items: stretch;
-  gap: 18px;
+  gap: 14px;
   margin-left: 0;
 }
 
 .hero-role {
-  margin-top: 18px;
+  margin-top: 16px;
   color: var(--mint);
+  font-size: clamp(1.28rem, 2.1vw, 1.72rem);
   background: none;
   -webkit-text-fill-color: currentColor;
 }
 
 .hero-tagline {
-  max-width: 500px;
-  margin-top: 18px;
-  line-height: 1.64;
+  max-width: 540px;
+  margin-top: 20px;
+  font-size: 1.03rem;
+  line-height: 1.68;
 }
 
 .hero-actions {
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .metric-strip {
-  gap: 12px;
-  margin-top: 36px;
+  gap: 14px;
+  margin-top: 34px;
 }
 
 .metric-strip div {
-  min-height: 146px;
+  min-height: 132px;
+  padding: 20px;
 }
 
 .hero-tagline,
@@ -3167,7 +3174,7 @@ h2 {
     #060a11;
   width: 100%;
   margin: 0;
-  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
 }
 
 .portrait-ring::after {
@@ -3176,9 +3183,9 @@ h2 {
 
 .signal-card {
   width: 100%;
-  min-height: 146px;
-  margin-top: -86px;
-  padding: 20px;
+  min-height: 132px;
+  margin-top: -46px;
+  padding: 18px 20px;
   display: grid;
   align-content: center;
   z-index: 2;
@@ -3671,9 +3678,10 @@ h2 {
   }
 
   .hero-section {
-    gap: 28px;
+    gap: 30px;
     min-height: auto;
     padding-top: 76px;
+    padding-bottom: 70px;
   }
 
   .hero-copy,
@@ -3684,7 +3692,7 @@ h2 {
 
   .hero-visual {
     min-height: auto;
-    width: min(100%, 430px);
+    width: min(100%, 390px);
     justify-self: center;
     justify-items: stretch;
   }
@@ -3699,6 +3707,7 @@ h2 {
     right: auto;
     bottom: auto;
     width: 100%;
+    min-height: auto;
     margin-top: 14px;
     padding: 18px;
   }
@@ -3806,6 +3815,7 @@ h2 {
 
   .metric-strip {
     grid-template-columns: 1fr;
+    margin-top: 26px;
   }
 
   .hero-actions {
