@@ -3062,8 +3062,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.35rem, 7.2vw, 6.65rem);
-  line-height: 1.02;
+  font-size: clamp(3.25rem, 6.45vw, 5.9rem);
+  line-height: 1.03;
 }
 
 h2 {
@@ -3072,15 +3072,15 @@ h2 {
 }
 
 .hero-section {
-  grid-template-columns: minmax(420px, 460px) minmax(360px, 520px);
+  grid-template-columns: minmax(380px, 424px) minmax(0, 520px);
   justify-content: center;
-  gap: clamp(28px, 3vw, 40px);
-  padding-top: 84px;
+  gap: clamp(40px, 4vw, 56px);
+  padding-top: 72px;
 }
 
 .hero-copy {
   grid-column: 2;
-  align-self: center;
+  align-self: start;
   max-width: 520px;
   justify-self: start;
 }
@@ -3089,17 +3089,37 @@ h2 {
   grid-column: 1;
   grid-row: 1;
   align-self: start;
-  width: min(100%, 384px);
+  width: min(100%, 400px);
   justify-self: start;
   justify-items: stretch;
   gap: 18px;
-  margin-left: clamp(28px, 3vw, 44px);
+  margin-left: 0;
 }
 
 .hero-role {
+  margin-top: 18px;
   color: var(--mint);
   background: none;
   -webkit-text-fill-color: currentColor;
+}
+
+.hero-tagline {
+  max-width: 500px;
+  margin-top: 18px;
+  line-height: 1.64;
+}
+
+.hero-actions {
+  margin-top: 28px;
+}
+
+.metric-strip {
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.metric-strip div {
+  min-height: 146px;
 }
 
 .hero-tagline,
@@ -3156,8 +3176,12 @@ h2 {
 
 .signal-card {
   width: 100%;
-  margin-top: 0;
+  min-height: 146px;
+  margin-top: -56px;
   padding: 20px;
+  display: grid;
+  align-content: center;
+  z-index: 2;
   transform: none;
 }
 
