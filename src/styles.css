@@ -3263,6 +3263,28 @@ h2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+:root[dir='rtl'] .skills-grid {
+  direction: rtl;
+}
+
+:root[dir='rtl'] .skill-card {
+  direction: rtl;
+  text-align: right;
+}
+
+:root[dir='rtl'] .skill-card-header {
+  justify-items: start;
+}
+
+:root[dir='rtl'] .skill-card-header p,
+:root[dir='rtl'] .skill-proof-list {
+  text-align: right;
+}
+
+:root[dir='rtl'] .skill-chip-list {
+  justify-content: flex-start;
+}
+
 .projects-grid {
   grid-template-columns: 1fr;
   gap: 34px;

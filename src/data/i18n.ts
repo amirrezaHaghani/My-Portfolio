@@ -49,6 +49,7 @@ export const fa = {
       'این بخش به جای نمودارهای نمایشی، نشان می‌دهد در عمل کجا بیشترین ارزش را ایجاد می‌کنم: توسعه Native Android، معماری قابل نگهداری، زیرساخت پایدار اپلیکیشن، تجربه‌های realtime و همکاری فنی با تیم.',
     groups: {
       Android: {
+        title: 'توسعه اندروید',
         focus: 'توسعه محصول Native',
         summary:
           'ساخت اپلیکیشن‌های اندرویدی با Kotlin، Java، Android SDK، Jetpack Compose، XML Views و Android TV/Leanback برای محصولاتی که کاربر واقعی و انتشار مستمر دارند.',
@@ -59,6 +60,7 @@ export const fa = {
         ],
       },
       Architecture: {
+        title: 'معماری',
         focus: 'معماری قابل نگهداری',
         summary:
           'طراحی ساختارهایی که تیم بتواند با MVVM/MVI، Clean Architecture، Modularization، SOLID و Design Patterns با اطمینان توسعه دهد.',
@@ -69,6 +71,7 @@ export const fa = {
         ],
       },
       Platform: {
+        title: 'زیرساخت محصول',
         focus: 'زیرساخت اپلیکیشن',
         summary:
           'مدیریت بخش‌های پایه‌ای و حساس اپلیکیشن مثل asynchronous data، dependency injection، networking، persistence، reactive streams و error handling.',
@@ -79,6 +82,7 @@ export const fa = {
         ],
       },
       Realtime: {
+        title: 'تجربه‌های زنده',
         focus: 'تجربه‌های زنده و ارتباطی',
         summary:
           'توسعه تجربه‌های realtime برای محصولات سلامت و سرویس‌محور؛ جایی که کیفیت اتصال، اعتماد کاربر و مدیریت state اهمیت زیادی دارد.',
@@ -89,6 +93,7 @@ export const fa = {
         ],
       },
       Workflow: {
+        title: 'فرآیند و لید فنی',
         focus: 'رهبری فنی و کیفیت تحویل',
         summary:
           'هدایت عادت‌های مهندسی مثل code review، مستندسازی، استانداردهای تیمی، تست، دیباگ و کیفیت انتشار؛ همراه با نقش Team Lead اندروید از سال ۱۴۰۳.',

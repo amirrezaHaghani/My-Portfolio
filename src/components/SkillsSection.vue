@@ -81,6 +81,7 @@ const skillGroups = computed(() => {
 
   return (Object.keys(groups) as SkillGroup[]).map((name) => ({
     name,
+    displayName: isFa.value ? fa.skills.groups[name].title : name,
     items: groups[name],
     ...(isFa.value ? fa.skills.groups[name] : skillDetails[name]),
   }));
@@ -106,7 +107,7 @@ const skillGroups = computed(() => {
         <AndroidMascot />
         <div class="skill-card-header">
           <span class="skill-focus">{{ group.focus }}</span>
-          <h3>{{ group.name }}</h3>
+          <h3>{{ group.displayName }}</h3>
           <p>{{ group.summary }}</p>
         </div>
 
