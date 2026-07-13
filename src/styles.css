@@ -3072,16 +3072,16 @@ h2 {
 }
 
 .hero-section {
-  grid-template-columns: minmax(380px, 424px) minmax(0, 520px);
-  justify-content: center;
-  gap: clamp(40px, 4vw, 56px);
+  grid-template-columns: minmax(0, 471px) minmax(0, 576px);
+  justify-content: start;
+  gap: 44px;
   padding-top: 72px;
 }
 
 .hero-copy {
   grid-column: 2;
   align-self: start;
-  max-width: 520px;
+  max-width: 540px;
   justify-self: start;
 }
 
@@ -3089,7 +3089,7 @@ h2 {
   grid-column: 1;
   grid-row: 1;
   align-self: start;
-  width: min(100%, 400px);
+  width: min(100%, 424px);
   justify-self: start;
   justify-items: stretch;
   gap: 18px;
@@ -3177,7 +3177,7 @@ h2 {
 .signal-card {
   width: 100%;
   min-height: 146px;
-  margin-top: -56px;
+  margin-top: -86px;
   padding: 20px;
   display: grid;
   align-content: center;
