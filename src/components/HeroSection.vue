@@ -20,6 +20,13 @@ const displayedMetrics = computed(() => (isFa.value ? fa.metrics : metrics));
       <p class="hero-role">{{ isFa ? fa.hero.role : profile.role }}</p>
       <p class="hero-tagline">{{ isFa ? fa.hero.tagline : profile.tagline }}</p>
 
+      <ul class="hero-specialties" aria-label="Core Android strengths">
+        <li>Kotlin</li>
+        <li>Compose</li>
+        <li>Architecture</li>
+        <li>Release quality</li>
+      </ul>
+
       <div class="hero-actions">
         <a class="primary-button" href="#projects">
           {{ isFa ? fa.hero.work : 'View work' }}

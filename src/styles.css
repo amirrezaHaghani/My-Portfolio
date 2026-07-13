@@ -1171,6 +1171,10 @@ h3 {
   text-align: right;
 }
 
+:root[dir='rtl'] .hero-specialties {
+  justify-content: flex-end;
+}
+
 .metric-strip dt {
   color: #fff;
   font-family: Sora, sans-serif;
@@ -3062,9 +3066,9 @@ h3 {
 }
 
 h1 {
-  max-width: 620px;
-  font-size: clamp(3.1rem, 5.4vw, 5.25rem);
-  line-height: 1.02;
+  max-width: 680px;
+  font-size: clamp(3.3rem, 6.1vw, 5.9rem);
+  line-height: 0.98;
 }
 
 h2 {
@@ -3073,60 +3077,94 @@ h2 {
 }
 
 .hero-section {
-  grid-template-columns: minmax(340px, 388px) minmax(0, 568px);
-  justify-content: start;
-  gap: clamp(56px, 6vw, 88px);
+  grid-template-columns: minmax(0, 620px) minmax(330px, 430px);
+  justify-content: space-between;
+  gap: clamp(40px, 5vw, 76px);
   align-items: center;
-  min-height: calc(100vh - var(--nav-height) - 18px);
-  padding-top: 58px;
-  padding-bottom: 64px;
+  min-height: calc(100vh - var(--nav-height) - 36px);
+  padding-top: 44px;
+  padding-bottom: 50px;
 }
 
 .hero-copy {
-  grid-column: 2;
+  grid-column: 1;
   align-self: center;
-  max-width: 568px;
+  max-width: 620px;
   justify-self: start;
 }
 
 .hero-visual {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
   align-self: center;
-  width: min(100%, 388px);
-  justify-self: start;
+  width: min(100%, 430px);
+  justify-self: end;
   justify-items: stretch;
-  gap: 14px;
+  gap: 0;
   margin-left: 0;
 }
 
+.hero-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 10px;
+  border: 1px solid rgba(61, 220, 132, 0.18);
+  border-radius: 999px;
+  background: rgba(61, 220, 132, 0.055);
+}
+
 .hero-role {
-  margin-top: 16px;
+  margin-top: 18px;
   color: var(--mint);
-  font-size: clamp(1.28rem, 2.1vw, 1.72rem);
+  font-size: clamp(1.25rem, 2vw, 1.62rem);
   background: none;
   -webkit-text-fill-color: currentColor;
 }
 
 .hero-tagline {
-  max-width: 540px;
-  margin-top: 20px;
+  max-width: 590px;
+  margin-top: 18px;
   font-size: 1.03rem;
   line-height: 1.68;
 }
 
+.hero-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-specialties li {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid rgba(229, 240, 252, 0.12);
+  border-radius: 999px;
+  padding: 0 13px;
+  background: rgba(246, 251, 255, 0.055);
+  color: rgba(229, 240, 252, 0.82);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .hero-actions {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .metric-strip {
-  gap: 14px;
-  margin-top: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
 }
 
 .metric-strip div {
-  min-height: 132px;
-  padding: 20px;
+  min-height: 118px;
+  padding: 18px;
 }
 
 .hero-tagline,
@@ -3170,22 +3208,28 @@ h2 {
 .portrait-ring {
   border-color: rgba(229, 240, 252, 0.14);
   background:
-    linear-gradient(145deg, rgba(61, 220, 132, 0.12), rgba(78, 202, 255, 0.08)),
+    radial-gradient(circle at 74% 18%, rgba(61, 220, 132, 0.16), transparent 32%),
+    linear-gradient(145deg, rgba(61, 220, 132, 0.1), rgba(78, 202, 255, 0.08)),
     #060a11;
   width: 100%;
+  aspect-ratio: 4 / 5.08;
   margin: 0;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 36px 110px rgba(0, 0, 0, 0.38);
 }
 
 .portrait-ring::after {
-  border-color: rgba(61, 220, 132, 0.18);
+  inset: 16px;
+  border-color: rgba(61, 220, 132, 0.16);
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(4, 8, 14, 0.42)),
+    linear-gradient(90deg, rgba(61, 220, 132, 0.08), transparent 38%);
 }
 
 .signal-card {
   width: 100%;
-  min-height: 132px;
-  margin-top: -46px;
-  padding: 18px 20px;
+  min-height: 118px;
+  margin-top: 14px;
+  padding: 18px 20px 18px 22px;
   display: grid;
   align-content: center;
   z-index: 2;
@@ -3692,7 +3736,7 @@ h2 {
 
   .hero-visual {
     min-height: auto;
-    width: min(100%, 390px);
+    width: min(100%, 430px);
     justify-self: center;
     justify-items: stretch;
   }
@@ -3794,7 +3838,7 @@ h2 {
   }
 
   h1 {
-    font-size: clamp(3rem, 18vw, 4.8rem);
+    font-size: clamp(2.72rem, 15vw, 4.45rem);
   }
 
   h2 {
@@ -3816,6 +3860,17 @@ h2 {
   .metric-strip {
     grid-template-columns: 1fr;
     margin-top: 26px;
+  }
+
+  .hero-specialties {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .hero-specialties li {
+    min-height: 32px;
+    padding: 0 11px;
+    font-size: 0.78rem;
   }
 
   .hero-actions {
